@@ -1,4 +1,4 @@
-body{
+.sign_up_body{
     background-color: #FFFFFF
 
 }
@@ -11,24 +11,24 @@ body{
         border-radius: 3px;
     }
 
-h1{
+.sign_up_h1{
     text-align: center;
     padding-top: 15px ;
 }
-h4{
+.sign_up_h4{
     text-align: center;
 }
-from{
+.sign_up_form{
     width: 300px;
     margin-left: 20px;
 }
 
-form label{
+.sign_up_form label{
     display: flex;
     margin-top: 20px;
     font-size: 18px;
 }
-form input{
+.sign_up_form input{
     width: 100%;
     padding: 7px;
     border: none;
@@ -37,7 +37,7 @@ form input{
     outline: none;
 }
 
-input[type="button"]{
+.sign_up_input[type="button"]{
     width: 320px;
     height: 35px;
     margin-top: 20px;
@@ -47,7 +47,7 @@ input[type="button"]{
     font-size: 18px;
 }
 
-p{
+.sign_up_p{
     text-align: center;
     padding-top: 20px;
     font-size: 15px;
