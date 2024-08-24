@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+ 
+</head>
+<body class = "login_bg">
+    <script src = "script.js"></script>
+
+
+
+    <div class="login_container"> <!--eto yung visible na box a website-->
+
+
+
+        <div class = "login_container_box login_div"> <!--eto yung lagayan ng login-->
+            <h2 class = login_h2>Log In</h2>
+            <!--ETO YUNG LAGAYAN NG PHP THANKSU-->
+            <form action="#">
+                <div class ="login_form-group">
+                    <label>Email</label>
+                    <input type="email"  required>
+                </div>
+
+                <div class ="login_form-group">
+                    <label>Password</label>
+                    <input type="password"  required>
+                </div>
+            </form>
+            <div class="form-btn">
+                <input type="submit" value="Login" name="login" class="btn btn-primary">
+            </div>
+        </div>
+
+
+
+        <div class = "signup_container_box"> <!-- Eto yung lagayan ng Sign up-->
+            <h2 class = login_h2>Sign Up</h2>
+            <h4 clas = signip_h4>It only takes a few minutes</h4>
+
+            <form class="sign_up_form">
+                <div class ="login_form-group">
+                    <label>Email </label>
+                    <Input type="email" placeholder="" required>
+                </div>
+                <div class ="login_form-group">
+                    <label>Password </label>
+                    <Input type="password" placeholder="" required>
+                </div>
+                <div class ="login_form-group">
+                    <label>Confirm Password </label>
+                    <Input type="password" placeholder="" required>
+                </div>
+            </form>
+            <div class="form-btn">
+                <input type="submit" value="Sign Up" name="Sign up" class="btn btn-primary">
+            </div> 
+        </div>
+        
+
+        <div class = "login_signup login_div"> <!--eto yung lagayan ng signin or signup invitation-->
+            <div class="toggle">
+                <div class="toggle-left toggle-panel">
+                    <h2 class="login_h2">Don't have an acount?</h2>
+                    <p>Create an acount to purhase product</p>
+                    <button class = "login_button_hidden">Sign Up</button>
+                </div>
+                <div class="toggle-right toggle-panel">
+                    <h2 class="login_h2">Already have an account?</h2>
+                    <p>Log in here!</p>
+                    <button class = "login_button_hidden">Log In</button>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+</body>
+
+</html>
