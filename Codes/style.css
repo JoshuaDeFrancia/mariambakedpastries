@@ -12,7 +12,7 @@
 .account_container{
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
     width: 45%;
-    height: 50%;
+    height: 70%;
     position: relative;
     border-radius: 20px;
     overflow: hidden;
@@ -44,12 +44,10 @@
     position: absolute;
     top: 50%;
     left: 5x;
-    transform: translateY(-200%);
     font-size: 1em;
     color: #162938;
     font-weight: 500;
     pointer-events: none;
-    transition: .5s;
 }
 
 
@@ -76,11 +74,8 @@
 
 .account_container.active .login_div{
     transform: translateX(100%);
+    
 }
-
-
-
-
 
 
 
@@ -126,7 +121,7 @@
 
 /**CSS NG TGGLE CNTAINER SA LGIN AND SIGN UP*/
 .toggle_container{
-    position: relative;
+    position: absolute;
     top: 0;
     left: 50%;
     width: 50%;
@@ -183,5 +178,9 @@
 
 .toggle-right{
     right: 0;
-    transform: translateX(200);
+    transform: translateX(0);
+}
+
+.account_container.active .toggle-right{
+    transform: translateX(200%);
 }
