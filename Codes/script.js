@@ -8,6 +8,8 @@ const signup_btn = document.getElementById('signup_btn');
 const signup_email_error = document.getElementById('signup_email_error');
 
 //variable sa sign up password
+const signup_password = document.getElementById('signup_password');
+const signup_password_error = document.getElementById('signup_password_error')
 
 //panggalaw nung login signup container
 account_signup_btn.addEventListener('click', () =>{
@@ -21,20 +23,58 @@ account_login_btn.addEventListener('click', () =>{
 
 //pangvalidate ng email 
 
-const showError = () => {
+const showSignUpEmailError = () => {
     signup_email_error.style.display ='block';
 }
 
+const showSignUpEmailCorrect = () => {
+    signup_email_error.style.display ='none';
+}
+
+
+function signUpEmailVerification()
+{
+    if(!signup_email.value.match(/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/))
+        {
+            return showSignUpEmailError();
+            
+        }
+        else{
+            return showSignUpEmailCorrect();
+        }
+}
+
+
+//password validation
+const showSignUpPasswordError = () => {
+    signup_password_error.style.display ='block';
+}
+
+const showSignUpPasswordCorrect = () => {
+    signup_password_error.style.display ='block';
+}
+
+function signUpPasswordVerification(){
+    if (signup_password.value<8 || signup_password.value.search(/[a-z]/) < 0){
+        return showSignUpPasswordError();
+    }
+    else{
+        return showSignUpPasswordCorrect();
+    }
+}
+
+//confirmpassword
+
+//sign up button
 signup_btn.addEventListener('click', (e) =>{
     e.preventDefault();
-    if(!signup_email.value.match(/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/))
-    {
-        return showError();
-    }
-
-    console.log('success');
+    signUpEmailVerification();
+    signUpPasswordVerification();
 });
 
+
+
+//show password
 function signup_reveal_password() {
     var signup_password = document.getElementById("signup_password");
   if (signup_password.type === "password") {
@@ -52,3 +92,7 @@ function signup_reveal_password2() {
     signup_password.type = "password";
   }
 }
+
+
+
+
