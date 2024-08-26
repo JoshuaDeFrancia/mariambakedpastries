@@ -17,26 +17,40 @@
 
 
         <div class = "account_form_box signup_div"> <!-- Eto yung lagayan ng Sign up-->
-            <h2 class = login_h2>Sign Up</h2>
-            <h4 clas = signup_h4>It only takes a few minutes</h4>
+            <h2 class = "login_h2">Sign Up</h2>
+            <h4 class = "signup_h4">It only takes a few minutes</h4>
 
             <form action="#"> <!--ETO YUNG LAGAYAN NG PHP THANKSU-->
-                <div class ="login_form-group">
-                    <label>Email </label>
-                    <Input type="email" placeholder="" required>
+                <div class ="login_form-group ">
+                    <Input type="email" placeholder="Email" id="signup_email" required>
+                    <p  id="signup_email_error" class = "signup_email_error">Invalid Email Address</p>
                 </div>
+
+
                 <div class ="login_form-group">
-                    <label>Password </label>
-                    <Input type="password" placeholder="" required>
+                    <Input type="password" placeholder="Password" id="signup_password" minlength="8" required>
                 </div>
+                <div>
+                    <input type="checkbox" onclick="signup_reveal_password()" id="signup_checkbox">
+                    <label for="signup_checkbox">Show Password</label>
+                    <p id="signup_password_error" class = "signup_password_error">Use at least 8 characters one uppercase letter one lowercase letter and one number in your password</p>
+                </div>
+
+
                 <div class ="login_form-group">
-                    <label>Confirm Password </label>
-                    <Input type="password" placeholder="" required>
+                    <Input type="password" placeholder="Confirm Password" id="signup_password2" required>
                 </div>
+                <div>
+                    <input type="checkbox" onclick="signup_reveal_password2()" id="signup_checkbox2">
+                    <label for="signup_checkbox2">Show Password</label>
+                </div>
+                <div class="login_form-btn">
+                    <input type="submit" value="Sign Up" id="signup_btn" class="account_btn">
+                </div> 
             </form>
-            <div class="form-btn">
-                <input type="submit" value="Sign Up" name="Sign up" class="btn btn-primary">
-            </div> 
+
+            
+
         </div>
 
 
@@ -45,17 +59,15 @@
             <!--ETO YUNG LAGAYAN NG PHP THANKSU-->
             <form action="#">
                 <div class ="login_form-group">
-                    <label>Email</label>
-                    <input type="email"  required>
+                    <input type="email"  placeholder="Email" required>
                 </div>
 
                 <div class ="login_form-group">
-                    <label>Password</label>
-                    <input type="password"  required>
+                    <input type="password" placeholder="Password" required>
                 </div>
             </form>
-            <div class="form-btn">
-                <input type="submit" name="login" class="btn btn-primary" >
+            <div class="login_form-btn">
+                <input type="submit" name="login" class="account_btn" >
             </div>
         </div>
 
@@ -79,6 +91,10 @@
                 </div>
             </div>
         </div>
+
+
+
+
     </div>
  
     <script src = "script.js"></script>
