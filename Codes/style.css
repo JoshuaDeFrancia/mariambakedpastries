@@ -1,3 +1,77 @@
+/* CSS NG NAVIGATION BAR */
+
+.navigation_nav-bar{
+    background-color: #F1E9D6;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    height: 17%;
+}
+
+.navigation_logo{
+    width: 15%;
+}
+
+.navigation_innerdiv{
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.navigation_bottom{
+    text-align: center;
+    width: 100%;
+}
+
+.navigation_bottom_inside{
+    width:100%;
+  padding: 1rem 1rem;
+  vertical-align: middle;
+}
+
+.navigation_bottom_left
+{
+    margin-left: 9%;
+    width: 90%;
+}
+.navigation_cart_button{
+    width: 10%;
+    text-align: right;
+}
+
+.navigation_cart{
+    color: #A26023;
+    font-size: 30px;
+
+}
+
+.navigation_cart:hover{
+    color: white;
+}
+
+a.navigation_header_button:link, a.navigation_header_button:visited {
+  color: #B08054;
+  font-size: 20px;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a.navigation_header_button:hover, a.navigation_header_button:active {
+    color: white;
+    
+}
+
 
 /*CSS NG LOGIN*/
 .account_body{
