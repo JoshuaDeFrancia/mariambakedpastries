@@ -1,13 +1,14 @@
 /* CSS NG NAVIGATION BAR */
-
 .navigation_nav-bar{
     background-color: #F1E9D6;
     width: 100%;
+    height: auto;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 99;
-    height: 17%;
+
+
 }
 
 .navigation_logo{
