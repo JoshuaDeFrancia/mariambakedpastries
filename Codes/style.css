@@ -1,14 +1,14 @@
 /* CSS NG NAVIGATION BAR */
+
 .navigation_nav-bar{
     background-color: #F1E9D6;
     width: 100%;
-    height: auto;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 99;
-
-
+    height: auto;
+    
 }
 
 .navigation_logo{
@@ -27,6 +27,45 @@
     align-items: center;
     justify-content: center;
 }
+
+.navigation_top{
+    text-align: center;
+    
+}
+.navigation_top_left
+{
+    margin-left: 9%;
+    width: 80%;
+}
+.navigation_top_right{
+    width: 20%;
+    text-align: right;
+    padding: 1rem 1rem;
+    vertical-align: middle;
+}
+
+.navigation_top_right_inside{
+    width:100%;
+  vertical-align: middle;
+}
+.navigation_profile_icon
+{
+    color: #A26023;
+    font-size: 30px;
+    background-color: none;
+    border: none;   
+}
+
+.navigation_profile_icon_text
+{
+     color: #A26023;
+    font-size: 16px;
+
+}
+.navigation_profile_inline-icon {
+    vertical-align: bottom;
+    font-size: 18px !important;
+ }
 
 .navigation_bottom{
     text-align: center;
