@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Products</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navigation_nav-bar">
+        <div class="navigation_outerdiv">
+            <div class="navigation_innerdiv">
+                <img src="..\Pictures\Navbar_Logo.png" class="navigation_logo">
+            </div>
+            <div class="navigation_innerdiv navigation_bottom">
+                <div class="navigation_bottom_inside navigation_bottom_left">
+                    <a href="/Menu.html" class="navigation_header_button">Browse Product</a>
+                    <a href="/Menu.html" class="navigation_header_button">Order Tracking</a>
+                    <a href="/Menu.html" class="navigation_header_button">Notification</a>
+                    <a href="/Menu.html" class="navigation_header_button">About Us</a>
+                </div>
+                <div class="navigation_bottom_inside navigation_cart_button">
+                    <a href="#" class="navigation_cart">
+                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="customer_browse_product">
+        <div class="browse_products_sidebar">
+            <h2>Categories</h2>
+            <ul class="browse_products_category-list">
+                <li>
+                    <input type="checkbox" id="all-categories" class="category-checkbox" checked>
+                    <label for="all-categories">All Categories</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="regular-cookies" class="category-checkbox">
+                    <label for="regular-cookies">Regular Sized Cookies</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="palm-cookies" class="category-checkbox">
+                    <label for="palm-cookies">Palm Sized Cookies</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="bite-cookies" class="category-checkbox">
+                    <label for="bite-cookies">One-bite Cookies</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="cookie-cakes" class="category-checkbox">
+                    <label for="cookie-cakes">Cookie Cakes</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="cupcakes" class="category-checkbox">
+                    <label for="cupcakes">Cupcakes</label>
+                </li>
+            </ul>
+        </div>
+
+        <div class="browse_products_products">
+            <h2>Browse Products</h2>
+            <div class="browse_products_product-grid">
+                <div class="browse_products_product" onclick="showPopup()">
+                    <h3>Cookie Title</h3>
+                    <div class="browse_products_price">₱250-₱420</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- START NG POP UP -->
+    <div id="backdrop" class="backdrop" onclick="closePopup()"></div>
+
+    <div id="product-popup" class="popup">
+        <div class="popup_content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <div class="popup_image_div">
+                <img src=" " class="popup_image"> 
+            </div>
+            <div class="browse_product_popup_details">
+                <h3>Cookie Title</h3>
+                <div class="popup_price">₱250-₱420</div>
+                
+                <div class="popup_description_ingredients">
+                    <p>Description Here</p>
+                    <p>Ingredients Here</p>
+                </div>
+                
+                <div class="browse_product_popup_product_quantity">
+                    <h4>Product Quantity</h4>
+                    <button class="quantity-btn" onclick="selectQuantity('half')">Half Dozen</button>
+                    <button class="quantity-btn" onclick="selectQuantity('dozen')">One Dozen</button>
+                </div>
+
+                <div class ="browse_product_title_order_quantity">
+                    <h4>Order Quantity</h4>
+                </div>
+
+
+                <div class="browse_product_popup_order_quantity">
+                    <button type="button" class="quantity-modify" onclick="decreaseQuantity()">-</button>
+                    <span id="order-quantity">0</span>
+                    <button type="button" class="quantity-modify" onclick="increaseQuantity()">+</button>
+                </div>
+
+                <div class="browse_product_popup_buttons">
+                    <button class="popup_order_btn">Order Now</button>
+                    <button class="popup_cart_btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src = "script.js"></script>
+</body>
+</html>
