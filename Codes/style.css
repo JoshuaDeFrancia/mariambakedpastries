@@ -1276,6 +1276,10 @@ Center_universal {text-align: center;}
 }
 
 /* CSS ng admin dashboard */
+.admindash_color {
+   background-color: #FAF0D9;
+
+}
 .main_admin {
   margin-top: 25px;
   margin-left: 200px; /* Same as the width of the sidenav */
