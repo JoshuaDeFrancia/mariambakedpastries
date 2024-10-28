@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<body class="admindash_color">
+
+<div class="sidenav_admin">
+  <img src="..\Pictures\Navbar_Logo.png" class="side_navigation_logo">
+  <a href="/Menu.html" class="navigation_header_button">Dashboard</a>
+  <a href="/Menu.html" class="navigation_header_button">Orders</a>
+  <a href="/Menu.html" class="navigation_header_button">Users</a>
+  <a href="/Menu.html" class="navigation_header_button">Products</a>
+  <a href="/Menu.html" class="navigation_header_button">Vouchers</a>
+</div>
+
+<div class="main_admin">
+         <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+       <script>
+const xValues = [50,60,70,80,90,100,110,120,130,140,150];
+const yValues = [7,8,8,9,9,9,10,11,14,14,15];
+
+new Chart("myChart", {
+  type: "line",
+  data: {
+    labels: xValues,
+    datasets: [{
+      fill: false,
+      lineTension: 0,
+      backgroundColor: "rgba(0,0,255,1.0)",
+      borderColor: "rgba(0,0,255,0.1)",
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    scales: {
+      yAxes: [{ticks: {min: 6, max:16}}],
+    }
+  }
+});
+</script>
+</div>
+
+
+
+
+
+<div class="main_admin">
+
+<table style="width:20%">
+  <tr>
+    <th>Products</th>
+    <th>Total sales</th>
+  </tr>
+  <tr>
+    <td>Cookie</td>
+    <td>150</td>
+  </tr>
+  
+</table>
+
+      </div>
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+   </body>
+</html> 
