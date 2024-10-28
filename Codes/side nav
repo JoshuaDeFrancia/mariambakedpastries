@@ -1,0 +1,9 @@
+
+<div class="sidenav_admin">
+  <img src="..\Pictures\Navbar_Logo.png" class="side_navigation_logo">
+  <a href="/Menu.html" class="navigation_header_button">Dashboard</a>
+  <a href="/Menu.html" class="navigation_header_button">Orders</a>
+  <a href="/Menu.html" class="navigation_header_button">Users</a>
+  <a href="/Menu.html" class="navigation_header_button">Products</a>
+  <a href="/Menu.html" class="navigation_header_button">Vouchers</a>
+</div>
