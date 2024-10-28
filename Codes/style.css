@@ -112,7 +112,6 @@ a.navigation_header_button:hover, a.navigation_header_button:active {
     
 }
 
-
 /*CSS NG LOGIN*/
 .account_body{
    /* background: url('../pictures/background_sign.jpg') no-repeat;*/
@@ -121,11 +120,12 @@ a.navigation_header_button:hover, a.navigation_header_button:active {
     justify-content: center;
     flex-direction: column;
     height: 100vh;
+    margin-top: 3%;
 } 
 
 .account_container{
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
-    width: 45%;
+    width: 65%;
     height: 70%;
     position: relative;
     border-radius: 20px;
@@ -176,6 +176,11 @@ a.navigation_header_button:hover, a.navigation_header_button:active {
     margin: 0;
     transform: translateX(-9999px);
 }
+
+
+
+
+
 .login_form-group input[type=checkbox] + label:before{
     position: absolute;
     content: '';
@@ -267,10 +272,39 @@ a.navigation_header_button:hover, a.navigation_header_button:active {
     padding: 30px 30px;
 }
 
+
+
+.signup_form_pages_divider form{
+    display: flex;
+    width: 310%;
+}
+.signup-pages .form-row{
+    margin:2% 0;
+}
+
+.signup_personal_page .form-row .col input,input::placeholder{
+    font-size: 11px;
+}
+
+
+.signup_form_pages_divider form .signup-pages{
+    margin-left: 4%;
+    margin-right: 3%;
+    width: 25%;
+    transition: margin-left 0.3s ease-in-out;
+}
 .signup_h4{
     text-align: center;
 }
 
+.signup_dropdown {
+    font-size: 11px;
+    width:100%
+}
+
+.signup_nationality{
+    width:130px;
+}
 .signup_email_error{
     padding-top: 30px;
     font-size: .8em;
@@ -284,6 +318,18 @@ a.navigation_header_button:hover, a.navigation_header_button:active {
     display: none;
 }
 
+.signup2_password_error{
+    font-size: .7em;
+    color: red;
+    display: none;
+}
+
+
+
+.signup_form-btn{
+    margin-right: 10%;
+}
+
 .account_container.active .signup_div{
     transform: translateX(100%);
     opacity: 1;
@@ -291,11 +337,7 @@ a.navigation_header_button:hover, a.navigation_header_button:active {
     animation: move 0.6s;
 }
 
-.signup2_password_error{
-    font-size: .7em;
-    color: red;
-    display: none;
-}
+
 
 @keyframes move{
     0%, 49.99%{
@@ -308,6 +350,90 @@ a.navigation_header_button:hover, a.navigation_header_button:active {
     }
 }
 
+
+/**CSS NG PERSONAL DETAILS**/
+.personal_details_div{
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+    padding: 30px 30px;
+}
+
+/* CSS NG PROGRESS BAR SA SIGN UP */
+
+.signup_div .progress_div_progress-bar{
+    display: flex;
+    flex-direction: row;
+    margin: 40px 0;
+
+
+}
+
+.signup_div .progress_div_progress-bar .step{
+    position: relative;
+    text-align: center;
+    width: 100%;
+
+}
+
+.progress_div_progress-bar .step .bullet{
+    position: relative;
+    height: 25px;
+    width: 25px;
+    border: 2px solid #000;
+    display: inline-block;
+    border-radius: 50%;
+    
+}
+
+.progress_div_progress-bar .step:last-child .bullet:before,
+.progress_div_progress-bar .step:last-child .bullet:after{
+    display: none;
+}
+
+.progress_div_progress-bar .step .bullet:before,
+.progress_div_progress-bar .step .bullet:after{
+    position: absolute;
+    content: '';
+    bottom: 11px;
+    right: -108px;
+    height: 3px;
+    width: 100px;
+    background: #E29C57;
+}
+
+.progress_div_progress-bar .step .bullet:after {
+    background: #B08054;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: animate 0.3s linear forwards;
+}
+
+@keyframes animate{
+    100%{
+        transform: scaleX(1);
+    }
+}
+
+.progress_div_progress-bar .step .span{
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 25px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.progress_div_progress-bar .step .check{
+
+    position:absolute;
+    left: 50%;
+    top: 50%;
+    font-size: 15px;
+    transform: translate(-50%,-50%);
+    display: none;
+}
 
 
 /**CSS NG TGGLE CNTAINER SA LGIN AND SIGN UP*/
