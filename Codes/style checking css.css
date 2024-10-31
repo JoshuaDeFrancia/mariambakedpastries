@@ -1,207 +1,3 @@
-/* CSS NG NAVIGATION BAR */
-.navigation_nav-bar {
-    background-color: #F1E9D6;
-    width: 100%;
-    height: auto;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 99;
-}
-
-.navigation_logo {
-    width: 15%;
-}
-
-.navigation_innerdiv {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-
-    align-items: center;
-    justify-content: center;
-}
-
-.navigation_bottom {
-    text-align: center;
-    width: 100%;
-}
-
-.navigation_bottom_inside {
-    width: 100%;
-    padding: 1rem 1rem;
-    vertical-align: middle;
-}
-
-.navigation_bottom_left {
-    margin-left: 9%;
-    width: 90%;
-}
-
-.navigation_cart_button {
-    width: 10%;
-    text-align: right;
-}
-
-.navigation_cart {
-    color: #A26023;
-    font-size: 30px;
-}
-
-.navigation_cart:hover {
-    color: white;
-}
-
-a.navigation_header_button:link,
-a.navigation_header_button:visited {
-    color: #B08054;
-    font-size: 20px;
-    padding: 14px 25px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-}
-
-a.navigation_header_button:hover,
-a.navigation_header_button:active {
-    color: white;
-}
-
-/* CSS NG GET STARTED HOMESCREEN */
-.homescreen_section_get_started {
-    display: flex;
-    align-items: center;
-    margin-top: 5%;
-    padding: 10%;
-    background-color: #FFFAED;
-    width: 100%;
-}
-
-.homescreen_content {
-    display: flex;
-    width: 100%;
-}
-
-.homescreen_text {
-    flex: 1;
-    text-align: left;
-    margin-right: 20px;
-}
-
-.homescreen_image_div {
-    flex: 1;
-    text-align: right;
-}
-
-.homescreen_image {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-}
-
-.homescreen_p {
-    font-size: 16px;
-    line-height: 1.6;
-    max-width: 80%;
-    margin: 4%;
-    color: #744916;
-}
-
-.homescreen_line {
-    width: 90%;
-    background-color: #9D4F0A;
-    border: none;
-    height: 2px;
-    margin: 10px;
-}
-
-.home_screen_get_started_browse-btn {
-    background-color: #A9692B;
-    padding: 1% 3%;
-    color: white;
-    border: none;
-    font-size: 20px;
-    text-align: center;
-    border-radius: 10%;
-    cursor: pointer;
-    margin-top: 10px;
-    margin-left: 20px;
-}
-
-.homescreen_get_started_title {
-    margin-left: 20px;
-    color: #9D4F0A;
-}
-
-/* CSS NG ABOUT US HOMESCREEN */
-.homescreen_section_about_us {
-    display: flex;
-    align-items: center;
-    padding: 10%;
-    background-color: #FAF0D9;
-    width: 100%;
-}
-
-.homescreen_about_content {
-    display: flex;
-    width: 100%;
-}
-
-.homescreen_about_text {
-    flex: 1;
-    text-align: right;
-    margin-right: 60px;
-}
-
-.homescreen_about_image_div {
-    flex: 1;
-    text-align: right;
-}
-
-.homescreen_about_image {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-}
-
-.homescreen_about_p {
-    font-size: 16px;
-    line-height: 1.6;
-    max-width: 80%;
-    margin: 4%;
-    color: #744916;
-}
-
-.homescreen_about_line {
-    width: 90%;
-    background-color: #9D4F0A;
-    border: none;
-    height: 2px;
-    margin: 10px;
-}
-
-.homescreen_about_us_browse-btn {
-    background-color: #A9692B;
-    padding: 1% 3%;
-    color: white;
-    border: none;
-    font-size: 20px;
-    text-align: center;
-    border-radius: 10%;
-    cursor: pointer;
-    margin-top: 10px;
-    margin-right: 20%;
-}
-
-.homescreen_about_us_title {
-    margin-right: 20%;
-    color: #9D4F0A;
-}
-
 /* CSS NG CUSTOMER BROWSE PRODUCTS */
 .customer_browse_product {
     display: flex;
@@ -248,8 +44,8 @@ a.navigation_header_button:active {
 }
 
 /* CSS NG BROWSE PRODUCT POP UP */
-.popup {
-    display: none;
+.customer_browse_popup {
+    display: none; 
     position: fixed;
     top: 50%;
     left: 50%;
@@ -262,14 +58,14 @@ a.navigation_header_button:active {
     border-radius: 10px;
 }
 
-.popup_content {
+.customer_browse_popup_content {
     display: flex;
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
 }
 
-.close-btn {
+.customer_browseclose-btn {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -278,12 +74,12 @@ a.navigation_header_button:active {
 }
 
 /* CSS NG BROWSE PRODUCT IMAGE SA POP UP */
-.popup_image_div {
+.browse_product_popup_image_div {
     flex: 1;
     margin-right: 20px;
 }
 
-.popup_image {
+.browse_product_popup_image {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
@@ -294,13 +90,13 @@ a.navigation_header_button:active {
     flex: 2;
 }
 
-.popup_price {
+.browse_product_popup_price {
     font-size: 20px;
     margin: 10px 0;
     color: #020202;
 }
 
-.popup_description_ingredients {
+.browse_product_popup_description_ingredients {
     background-color: #F1E9D6;
     padding: 15px;
     border-radius: 5px;
@@ -334,14 +130,6 @@ a.navigation_header_button:active {
     background-color: #fff; 
     color: #A9692B; 
 }
-
-/* CSS NG BROWSE PRODUCT BACKGROUND NG BUTTON SA ONE AND HALF DOZEN */
-.selected {
-    background-color: #F1E9D6; 
-    color: #A9692B; 
-}
-
-
 
 /* CSS NG BROWSE PRODUCT ORDER QUANTITY */
 .browse_product_popup_order_quantity {
@@ -378,9 +166,6 @@ a.navigation_header_button:active {
     margin: 0;
 }
 
-
-
-
 /* CSS NG BROWSE PRODUCT ORDER AND CART BUTTON */
 .browse_product_popup_buttons {
     display: flex;
@@ -405,7 +190,7 @@ a.navigation_header_button:active {
 
 /* CSS NG BACKDROP OVERLAY */
 .backdrop {
-    display: none;
+    display: none; /* Hidden by default */
     position: fixed;
     top: 0;
     left: 0;
@@ -414,484 +199,8 @@ a.navigation_header_button:active {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 999;
 }
-
-
-
-.selected {
-    background-color: #F1E9D6; 
-}
-
 
 /* CSS NG SA CATEGORIES NA NAKA HIGHLIGHT YUNG ISANG CATEGORY AND ISA LANG MACHECHECK */
 input[type="checkbox"]:checked + label {
     color: #B08054; 
 }
-
-
-/* CSS NG CART */
-body {
-    background-color: #FFFAED; 
-}
-
-.cart-container {
-    padding-top: 70px; 
-    align-items: center;
-    justify-content: center;
-    display: flex;
-}
-
-.cart-item {
-    display: flex;
-    align-items: center; 
-    justify-content: space-between; 
-    background-color: #FAF0D9; 
-    padding: 10px;
-    margin-top: 100px;
-    margin-bottom: 15px;
-    border-radius: 10px;
-    width: 85%;
-}
-
-.cart-item img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.cart-details {
-    flex-grow: 2;
-    margin-left: 15px;
-}
-
-.cart-details .cookie-title {
-    font-weight: bold;
-    font-size: 18px;
-    color: #000000;
-}
-
-.product-quantity, .order-quantity {
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-}
-
-.quantity-btn {
-    margin-left: 5px;
-    padding: 8px;
-    border: 1px solid #b08054;
-    background-color: transparent;
-    cursor: pointer;
-}
-
-.quantity-btn.selected {
-    background-color: #b08054;
-    color: #fff;
-}
-
-.cart_order-quantity-controls {
-    display: flex;
-    align-items: center;
-    margin-top: 5px;
-}
-
-.cart_order-quantity-controls button {
-    border: 1px solid #b08054; 
-    background-color: transparent; 
-    color: #5b372c; 
-    font-size: 16px;
-    padding: 5px 12px; 
-    cursor: pointer;
-    margin: 0 5px;
-    border-radius: 4px; 
-    transition: background-color 0.3s ease, color 0.3s ease; 
-}
-
-.cart_order-quantity-controls button:hover {
-    background-color: #b08054; 
-    color: white; 
-}
-
-.order-quantity-controls .quantity-increase, 
-.order-quantity-controls .quantity-decrease {
-    width: auto; 
-}
-
-.cart-price {
-    font-size: 18px;
-    font-weight: bold;
-    color: #000;
-}
-
-.cart_remove-item {
-    color: black;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-
-.cart-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    padding: 20px;
-}
-
-.cart_total-price {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 20px; 
-}
-
-.cart-buttons {
-    display: flex;
-    gap: 10px;
-}
-
-.cart-buttons button {
-    padding: 10px 15px;
-    background-color: #b08054;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.cart-buttons button.active {
-    background-color: #D1975F;
-}
-
-.cart-checkbox {
-    margin-right: 15px; 
-    width: 50px ;
-    height: 20px;
-    margin-top: 60px;
-}
-
-.voucher-popup {
-    display: none; 
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-}
-
-.voucher-popup-content {
-    background-color: #FAF0D9;
-    border-radius: 10px;
-    padding: 20px;
-    width: 300px;
-    margin: 100px auto;
-    text-align: center;
-    position: relative;
-}
-
-.voucher-popup-content h2 {
-    margin-bottom: 15px;
-}
-
-.voucher-input {
-    padding: 10px;
-    width: 80%;
-    border: 1px solid #B08054;
-    border-radius: 5px;
-}
-
-.apply-voucher-btn {
-    padding: 10px 20px;
-    background-color: #A9692B;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-.apply-voucher-btn:hover {
-    background-color: #8a5325;
-}
-
-.close-voucher-popup {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-CSS NG PRODUCT LIST ADMIN
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-body {
-    display: flex;
-}
-
-/* Side Navigation */
-.sidenav_admin {
-    height: 100%;
-    width: 200px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #fff;
-    overflow-x: hidden;
-    padding-top: 20px;
-}
-
-.sidenav_admin a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-}
-
-.sidenav_admin a:hover {
-    color: #f1f1f1;
-}
-
-.side_navigation_logo {
-    width: 100%;
-}
-
-.logout {
-    display: block;
-    margin-top: 30px;
-    color: #8e6247;
-    font-size: 16px;
-    text-decoration: none;
-}
-
-.product_list_admin_main_background {
-    flex: 1;
-    padding: 20px;
-    background-color: #FAF0D9;
-    margin-left: 200px;
-}
-
-/* Search Product */
-.product_list_admin_search_header input[type="text"] {
-    width: 300px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 20px;
-}
-
-.product_list_admin_box {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.product_list_admin_filters {
-    display: flex;
-    align-items: center;
-    gap: 5%;
-    margin-bottom: 20px;
-}
-
-.product_list_admin_filters input {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    flex: 1;
-}
-
-.product_list_admin_filter_button {
-    padding: 10px 20px;
-    background-color: #9F520E;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.icons {
-    margin-left: auto;
-    display: flex;
-    gap: 10px;
-}
-
-.product_list_admin_add_button,
-.product_list_admin_delete_button {
-    background: none;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-.product_list_admin_add_button {
-    color: gray;
-}
-
-.product_list_admin_delete_button {
-    color: red;
-}
-
-.product_list_admin_add_button:hover {
-    color: #7d7d7d;
-}
-
-.product_list_admin_delete_button:hover {
-    color: darkred;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: white;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-th, td {
-    padding: 15px;
-    text-align: left;
-    border-bottom: 1px solid #f0f0f0;
-}
-
-th {
-    background-color: #F5F5F5;
-    color: #8e6247;
-}
-
-th input[type="checkbox"], td input[type="checkbox"] {
-    transform: scale(1.2);
-}
-
-/* CSS NG PRODUCT ID SA POP UP NG PRODUCT LIST ADMIN NA NAKA HIGHLIGHT */
-.product-id {
-    color: #B08054;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-/* CSS NG POP UP SA ADMIN PRODUCT LIST */
-#popup {
-    display: none;
-    position: fixed;
-    top: 10;
-    left: 10;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-}
-
-.popup-content {
-    background-color: #ffffff;
-    width: 70%;
-    max-width: 700px;
-    padding: 20px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
-}
-
-.back-button {
-    border: none;
-    background: none;
-    font-size: 16px;
-    cursor: pointer;
-    color: black;
-    font-weight: bold;
-    margin-bottom:  70%;
-}
-
-/* CSS NG VIEWING PRODUCT ID */
-.popup h2 {
-    color: black;
-}
-
-.popup-body {
-    display: flex;
-    gap: 20px;
-}
-
-.popup-image img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.popup-details {
-    flex: 1;
-}
-
-/* CSS NG PRODUCT VIEWING */
-.product-viewing {
-    margin-bottom: 15px; /* Space below the heading */
-}
-
-.product-viewing h2 {
-    color: #000; 
-    font-size: 1.5em; 
-    text-align: left; 
-    
-}
-
-.popup-field {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 10px 0;
-}
-
-label {
-    font-weight: bold;
-}
-
-.edit-button {
-    background: none;
-    border: none;
-    color: #B08054;
-    cursor: pointer;
-}
-
-.save-button {
-    background-color: #B08054;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-/* CSS NG PRODUCT LIST POPUP QUANTITY */
-.popup-quantity table {
-    width: 100%;
-}
-
-.popup-quantity th,
-.popup-quantity td {
-    text-align: center;
-}
-
-
-
-
-
-
-
-
-
-  
-
-
