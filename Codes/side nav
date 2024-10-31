@@ -6,4 +6,5 @@
   <a href="/Menu.html" class="navigation_header_button">Users</a>
   <a href="/Menu.html" class="navigation_header_button">Products</a>
   <a href="/Menu.html" class="navigation_header_button">Vouchers</a>
+  <a href="/Menu.html" class="buttom_head_logout">logout</a>
 </div>
