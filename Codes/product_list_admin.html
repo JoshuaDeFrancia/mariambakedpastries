@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="sidenav_admin">
+    <img src="..\Pictures\Navbar_Logo.png" class="side_navigation_logo">
+    <a href="/Menu.html" class="navigation_header_button">Dashboard</a>
+    <a href="/Menu.html" class="navigation_header_button">Orders</a>
+    <a href="/Menu.html" class="navigation_header_button">Users</a>
+    <a href="/Menu.html" class="navigation_header_button">Products</a>
+    <a href="/Menu.html" class="navigation_header_button">Vouchers</a>
+  </div>
+  
+  <main class="product_list_admin_main_background">
+    <header class="product_list_admin_search_header">
+      <input type="text" placeholder="Search product ID or Name">
+    </header>
+    
+    <section class="product-list">
+      <div class="product_list_admin_box">
+        <div class="product_list_admin_filters">
+          <input type="text" placeholder="Product Type">
+          <input type="text" placeholder="Flavor">
+          <button class="product_list_admin_filter_button">Filter</button>
+          <span class="icons">
+            <button class="product_list_admin_add_button">+</button>
+            <button class="product_list_admin_delete_button">🗑️</button>
+          </span>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th><input type="checkbox"></th>
+              <th>ID</th>
+              <th>Product Name</th>
+              <th>Product Type</th>
+              <th>Flavor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td><span class="product-id" onclick="showPopup('PROD01')">PROD01</span></td>
+              <td>Classic Chocolate Chip Cookie Regular Sized Cookies</td>
+              <td>Regular Sized Cookies</td>
+              <td>Chocolate Chip</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <button class="back-button" onclick="closePopup()">Back</button>
+        
+        <div class="popup-body">
+          <div class="popup-image">
+            <!-- You can include an image here -->
+          </div>
+          
+          <div class="popup-details">
+            <div class="product-viewing">
+              <h2 id="popup-id">Viewing Product PROD01</h2> <!-- Add the ID here -->
+            </div>
+            <div class="popup-field">
+              <label>Product Name:</label>
+              <span>Classic Chocolate Cookie Regular Sized Cookies</span>
+              <button class="edit-button">✎</button>
+            </div>
+            <div class="popup-field">
+              <label>Product Type:</label>
+              <span>Regular Sized Cookies</span>
+              <button class="edit-button">✎</button>
+            </div>
+            <div class="popup-field">
+              <label>Flavor:</label>
+              <span>Chocolate</span>
+              <button class="edit-button">✎</button>
+            </div>
+
+            <div class="popup-quantity">
+              <table>
+                <tr>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                </tr>
+                <tr>
+                  <td>6 <button class="edit-button">✎</button></td>
+                  <td>250.00 <button class="edit-button">✎</button></td>
+                </tr>
+                <tr>
+                  <td>12 <button class="edit-button">✎</button></td>
+                  <td>420.00 <button class="edit-button">✎</button></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <button class="save-button">Save</button>
+      </div>
+    </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
