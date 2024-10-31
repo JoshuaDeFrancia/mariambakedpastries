@@ -732,230 +732,213 @@ a.navigation_header_button:hover, a.navigation_header_button:active {
     color: #9D4F0A;
 }
 
-/* CSS NG CUSTOMER BROWSE PRODUCTS */
-.customer_browse_product {
-    display: flex;
-    width: 100%;
-    margin-top: 150px;
-    overflow: auto;
+// SCRIPT NG POP UP SA BROWSE PRODUCT
+    function showBrowseProductPopup() {
+        document.getElementById('browse_product_popup').style.display = 'block';
+        document.getElementById('backdrop').style.display = 'block'; 
+    }
+
+    function closeBrowseProductPopup() {
+        document.getElementById('browse_product_popup').style.display = 'none';
+        document.getElementById('backdrop').style.display = 'none'; 
+    }
+
+    // SCRIPT NG DECREASE AND INCREASE BUTTON SA POP UP SA BROWSE
+    function Browse_add_Quantity() {
+        var quantity = document.getElementById('order-quantity').innerText; 
+        var newQuantity = parseInt(quantity) + 1; 
+        document.getElementById('order-quantity').innerText = newQuantity; 
+    }
+
+    function Browse_minus_Quantity() {
+        var quantity = document.getElementById('order-quantity').innerText; 
+        var newQuantity = Math.max(parseInt(quantity) - 1, 0); 
+        document.getElementById('order-quantity').innerText = newQuantity; 
+    }
+
+    function selectQuantity(type) {
+        const buttons = document.querySelectorAll('.quantity-btn');
+        buttons.forEach(button => {
+            button.classList.remove('selected'); 
+        });
+
+        if (type === 'half') {
+            buttons[0].classList.add('selected');
+        } else if (type === 'dozen') {
+            buttons[1].classList.add('selected');
+        }
+    }
+
+    const checkboxes = document.querySelectorAll('.category-checkbox');
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            if (this.checked) {
+                checkboxes.forEach(cb => {
+                    if (cb !== this) {
+                        cb.checked = false;
+                    }
+                });
+            }
+        });
+    });
+
+
+
+
+// SCRIPT NG CART
+// SCRIPT SA CART SA PAG INCREASE NG ORDER QUANTITY 
+function increaseQuantity(event) {
+    const orderQuantityElement = event.target.parentNode.querySelector('.order-quantity-value');
+    let currentQuantity = parseInt(orderQuantityElement.innerText);
+    orderQuantityElement.innerText = currentQuantity + 1;
+    updateTotalPrice(); // Update total price after increasing quantity
 }
 
-.browse_products_sidebar {
-    width: 25%;
-    background-color: #FFFAED;
-    padding: 20px;
-    margin: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+// SCRIPT SA CART SA PAG DECREASE NG ORDER QUANTITY
+function decreaseQuantity(event) {
+    const orderQuantityElement = event.target.parentNode.querySelector('.order-quantity-value');
+    let currentQuantity = parseInt(orderQuantityElement.innerText);
+    if (currentQuantity > 0) {
+        orderQuantityElement.innerText = currentQuantity - 1;
+        updateTotalPrice(); // Update total price after decreasing quantity
+    }
 }
 
-.browse_products_category-list {
-    list-style: none;
-    padding: 0;
+// SCRIPT SA CART YUNG PAG HANDLE NG HALF DOZEN PATI ONE DOZEN 
+function selectProductQuantity(event) {
+    const buttons = event.target.parentNode.querySelectorAll('.quantity-btn');
+    buttons.forEach(button => button.classList.remove('selected'));
+    event.target.classList.add('selected');
 }
 
-.browse_products_category-list li {
-    margin-bottom: 10px;
+// SCRIPT SA CART SA PAG REMOVE NG ITEM SA CART 
+function removeCartItem(event) {
+    const cartItem = event.target.closest('.cart-item');
+    cartItem.remove();
+    updateTotalPrice(); 
 }
 
-.browse_products_products {
-    width: 75%;
-    padding: 20px;
+function updateTotalPrice() {
+    let totalPrice = 0;
+    document.querySelectorAll('.cart-item').forEach(cartItem => {
+        const priceText = cartItem.querySelector('.cart-price').innerText;
+        const price = parseFloat(priceText.replace('Price: ₱', '').split('-')[0]); 
+        const quantityText = cartItem.querySelector('.order-quantity-value').innerText;
+        const quantity = parseInt(quantityText);
+
+        totalPrice += price * quantity; 
+    });
+    document.querySelector('.cart_total-price span').innerText = `Total: ₱${totalPrice.toFixed(2)}`;
 }
 
-.browse_products_product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+function changeButtonColor(event) {
+    const buttons = document.querySelectorAll('.cart-buttons button');
+    buttons.forEach(button => button.classList.remove('active')); 
+    event.target.classList.add('active'); 
 }
 
-.browse_products_product {
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    cursor: pointer;
-}
+document.querySelector('.voucher-btn').addEventListener('click', changeButtonColor);
+document.querySelector('.order-btn').addEventListener('click', changeButtonColor);
 
-/* CSS NG BROWSE PRODUCT POP UP */
-.popup {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1000;
-    background-color: #FFFAED;
-    padding: 30px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    width: 700px;
-    border-radius: 10px;
-}
+document.querySelectorAll('.quantity-increase').forEach(button => {
+    button.addEventListener('click', increaseQuantity);
+});
 
-.popup_content {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
-}
+document.querySelectorAll('.quantity-decrease').forEach(button => {
+    button.addEventListener('click', decreaseQuantity);
+});
 
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 18px;
-    cursor: pointer;
-}
+document.querySelectorAll('.quantity-btn').forEach(button => {
+    button.addEventListener('click', selectProductQuantity);
+});
 
-/* CSS NG BROWSE PRODUCT IMAGE SA POP UP */
-.popup_image_div {
-    flex: 1;
-    margin-right: 20px;
-}
+document.querySelectorAll('.cart_remove-item').forEach(button => {
+    button.addEventListener('click', removeCartItem);
+});
 
-.popup_image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
+updateTotalPrice();
 
-/* CSS NG BROWSE PRODUCT PRODUCT DETAILS */
-.browse_product_popup_details {
-    flex: 2;
-}
 
-.popup_price {
-    font-size: 20px;
-    margin: 10px 0;
-    color: #020202;
-}
-
-.popup_description_ingredients {
-    background-color: #F1E9D6;
-    padding: 15px;
-    border-radius: 5px;
-    border: 1px solid #F1E9D6;
-    margin-top: 10px;
-    font-size: 14px;
-    color: #000000;
-}
-
-/* CSS NG BROWSE PRODUCT HALF AND ONE DOZEN BUTTON */
-.browse_product_popup_product_quantity {
-    margin-top: 15px;
-}
-
-.quantity-btn {
-    padding: 10px 20px;
-    background-color: #FFFAED; 
-    color: #A9692B;
-    border: #F1E9D6;
-    border-style: solid;
-    border-radius: 5px;
-    margin-right: 10px;
-    cursor: pointer;
-}
-
-.selected {
-    background-color: #F1E9D6; 
-}
-
-.quantity-btn:hover {
-    background-color: #fff; 
-    color: #A9692B; 
-}
-
-/* CSS NG BROWSE PRODUCT BACKGROUND NG BUTTON SA ONE AND HALF DOZEN */
-.selected {
-    background-color: #F1E9D6; 
-    color: #A9692B; 
+function openVoucherPopup() {
+    document.querySelector('.voucher-popup').style.display = 'block';
 }
 
 
-
-/* CSS NG BROWSE PRODUCT ORDER QUANTITY */
-.browse_product_popup_order_quantity {
-    display: flex;
-    align-items: center;
-    margin-top: 15px;
-    border: 1px solid #A9692B; 
-    border-radius: 5px; 
-    padding: 5px; 
-    width: 110px;
+function closeVoucherPopup() {
+    document.querySelector('.voucher-popup').style.display = 'none';
 }
 
-.quantity-modify {
-    padding: 5px 10px;
-    background-color: #F1E9D6;
-    color: #A9692B;
-    border: 1px solid #A9692B; 
-    border-radius: 5px; 
-    cursor: pointer;
-    font-size: 18px;
-    flex: 0; 
+
+document.querySelector('.voucher-btn').addEventListener('click', openVoucherPopup);
+
+
+document.querySelector('.close-voucher-popup').addEventListener('click', closeVoucherPopup);
+
+
+window.addEventListener('click', function(event) {
+    const popup = document.querySelector('.voucher-popup');
+    if (event.target === popup) {
+        closeVoucherPopup();
+    }
+});
+
+// SCRIPT SA CART YUNG PAG HANDLE NG HALF DOZEN PATI ONE DOZEN 
+function selectProductQuantity(event) {
+    const buttons = event.target.parentNode.querySelectorAll('.quantity-btn');
+    buttons.forEach(button => button.classList.remove('selected'));
+    event.target.classList.add('selected');
 }
 
-#order-quantity {
-    width: 40px; 
-    text-align: center;
-    font-size: 18px;
-    margin: 0 5px; 
-}
-
-#order-quantity::-webkit-inner-spin-button,
-#order-quantity::-webkit-outer-spin-button {
-    -webkit-appearance: none; 
-    margin: 0;
+// SCRIPT SA CART SA PAG REMOVE NG ITEM SA CART 
+function removeCartItem(event) {
+    const cartItem = event.target.closest('.cart-item');
+    cartItem.remove();
+    updateTotalPrice(); 
 }
 
 
 
+// SCRIPT NG POP UP SA CART
+function updateTotalPrice() {
+    let totalPrice = 0;
+    document.querySelectorAll('.cart-item').forEach(cartItem => {
+        const priceText = cartItem.querySelector('.cart-price').innerText;
+        const price = parseFloat(priceText.replace('Price: ₱', '').split('-')[0]); 
+        const quantityText = cartItem.querySelector('.order-quantity-value').innerText;
+        const quantity = parseInt(quantityText);
 
-/* CSS NG BROWSE PRODUCT ORDER AND CART BUTTON */
-.browse_product_popup_buttons {
-    display: flex;
-    gap: 15px;
-    margin-top: 20px;
+        totalPrice += price * quantity; 
+    });
+    document.querySelector('.cart_total-price span').innerText = `Total: ₱${totalPrice.toFixed(2)}`;
 }
 
-.popup_cart_btn,
-.popup_order_btn {
-    padding: 10px 20px;
-    background-color: #A9692B;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+function changeButtonColor(event) {
+    const buttons = document.querySelectorAll('.cart-buttons button');
+    buttons.forEach(button => button.classList.remove('active')); 
+    event.target.classList.add('active'); 
 }
 
-.popup_cart_btn:hover,
-.popup_order_btn:hover {
-    background-color: #8a5325;
-}
+document.querySelector('.voucher-btn').addEventListener('click', changeButtonColor);
+document.querySelector('.order-btn').addEventListener('click', changeButtonColor);
 
-/* CSS NG BACKDROP OVERLAY */
-.backdrop {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-}
+document.querySelectorAll('.quantity-increase').forEach(button => {
+    button.addEventListener('click', increaseQuantity);
+});
 
+document.querySelectorAll('.quantity-decrease').forEach(button => {
+    button.addEventListener('click', decreaseQuantity);
+});
 
+document.querySelectorAll('.quantity-btn').forEach(button => {
+    button.addEventListener('click', selectProductQuantity);
+});
 
-.selected {
-    background-color: #F1E9D6; 
-}
+document.querySelectorAll('.cart_remove-item').forEach(button => {
+    button.addEventListener('click', removeCartItem);
+});
 
-
-/* CSS NG SA CATEGORIES NA NAKA HIGHLIGHT YUNG ISANG CATEGORY AND ISA LANG MACHECHECK */
-input[type="checkbox"]:checked + label {
-    color: #B08054; 
-}
+updateTotalPrice(); 
+	
 
 /*CSS NG Proof of payment*/
 .proof_payment {
@@ -969,6 +952,7 @@ input[type="checkbox"]:checked + label {
 * {
   box-sizing: border-box;
 }
+
 /*CSS NG About us*/
 .About_Us {
   background-color: #FFFAED;
