@@ -12,7 +12,7 @@
     <nav class="navigation_nav-bar">
         <div class="navigation_outerdiv">
             <div class="navigation_innerdiv">
-                <img src="..\Pictures\Navbar_Logo.png" class="navigation_logo">
+                <img src="..\Pictures\Navbar_Logo.png" class="navigation_logo" alt="Navbar Logo">
             </div>
             <div class="navigation_innerdiv navigation_bottom">
                 <div class="navigation_bottom_inside navigation_bottom_left">
@@ -64,7 +64,7 @@
         <div class="browse_products_products">
             <h2>Browse Products</h2>
             <div class="browse_products_product-grid">
-                <div class="browse_products_product" onclick="showPopup()">
+                <div class="browse_products_product" onclick="showBrowseProductPopup()">
                     <h3>Cookie Title</h3>
                     <div class="browse_products_price">₱250-₱420</div>
                 </div>
@@ -72,14 +72,14 @@
         </div>
     </section>
 
-    <!-- START NG POP UP -->
-    <div id="backdrop" class="backdrop" onclick="closePopup()"></div>
+    <!-- START POP UP -->
+    <div id="backdrop" class="backdrop" onclick="closeBrowseProductPopup()"></div>
 
-    <div id="product-popup" class="popup">
-        <div class="popup_content">
-            <span class="close-btn" onclick="closePopup()">&times;</span>
-            <div class="popup_image_div">
-                <img src=" " class="popup_image"> 
+    <div id="browse_product_popup" class="browse_product_popup">
+        <div class="customer_browse_popup_content">
+            <span class="close-btn" onclick="closeBrowseProductPopup()">&times;</span>
+            <div class="browse_product_popup_image_div">
+                <img src=" " class="browse_product_popup_image" alt="Product Image"> 
             </div>
             <div class="browse_product_popup_details">
                 <h3>Cookie Title</h3>
@@ -96,15 +96,14 @@
                     <button class="quantity-btn" onclick="selectQuantity('dozen')">One Dozen</button>
                 </div>
 
-                <div class ="browse_product_title_order_quantity">
+                <div class="browse_product_title_order_quantity">
                     <h4>Order Quantity</h4>
                 </div>
 
-
                 <div class="browse_product_popup_order_quantity">
-                    <button type="button" class="quantity-modify" onclick="decreaseQuantity()">-</button>
-                    <span id="order-quantity">0</span>
-                    <button type="button" class="quantity-modify" onclick="increaseQuantity()">+</button>
+                    <button type="button" class="quantity-modify" onclick="Browse_minus_Quantity()">-</button>
+                    <span id="order-quantity">1</span>
+                    <button type="button" class="quantity-modify" onclick="Browse_add_Quantity()">+</button>
                 </div>
 
                 <div class="browse_product_popup_buttons">
@@ -114,6 +113,6 @@
             </div>
         </div>
     </div>
-    <script src = "script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
