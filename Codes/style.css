@@ -143,6 +143,12 @@ a.navigation_header_button:hover, a.navigation_header_button:active {
 .side_navigation_logo{
     width: 100%;
 }
+.buttom_head_logout {
+
+position: absolute;
+bottom: 0;
+}
+
 
 /*CSS NG LOGIN*/
 .account_body{
