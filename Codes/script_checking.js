@@ -1,11 +1,11 @@
-// SCRIPT NG POP UP SA BROWSE PRODUCT
+    // SCRIPT NG POP UP SA BROWSE PRODUCT
     function showPopup() {
-        document.getElementById('customer_browse_popup').style.display = 'block';
+        document.getElementById('browse_product_popup').style.display = 'block';
         document.getElementById('backdrop').style.display = 'block'; 
     }
 
     function closePopup() {
-        document.getElementById('customer_browse_popup').style.display = 'none';
+        document.getElementById('browse_product_popup').style.display = 'none';
         document.getElementById('backdrop').style.display = 'none'; 
     }
 
