@@ -1,19 +1,21 @@
 /* CSS NG NAVIGATION BAR */
-.navigation_nav-bar {
+
+.navigation_nav-bar{
     background-color: #F1E9D6;
     width: 100%;
-    height: auto;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 99;
+    height: auto;
+    
 }
 
-.navigation_logo {
+.navigation_logo{
     width: 15%;
 }
 
-.navigation_innerdiv {
+.navigation_innerdiv{
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
@@ -26,49 +28,577 @@
     justify-content: center;
 }
 
-.navigation_bottom {
+.navigation_top{
     text-align: center;
-    width: 100%;
+    
 }
-
-.navigation_bottom_inside {
-    width: 100%;
+.navigation_top_left
+{
+    margin-left: 9%;
+    width: 80%;
+}
+.navigation_top_right{
+    width: 20%;
+    text-align: right;
     padding: 1rem 1rem;
     vertical-align: middle;
 }
 
-.navigation_bottom_left {
+.navigation_top_right_inside{
+    width:100%;
+  vertical-align: middle;
+}
+.navigation_profile_icon
+{
+    color: #A26023;
+    font-size: 30px;
+    background-color: none;
+    border: none;   
+}
+
+.navigation_profile_icon_text
+{
+     color: #A26023;
+    font-size: 16px;
+
+}
+.navigation_profile_inline-icon {
+    vertical-align: bottom;
+    font-size: 18px !important;
+ }
+
+.navigation_bottom{
+    text-align: center;
+    width: 100%;
+}
+
+.navigation_bottom_inside{
+    width:100%;
+  padding: 1rem 1rem;
+  vertical-align: middle;
+}
+
+.navigation_bottom_left
+{
     margin-left: 9%;
     width: 90%;
 }
-
-.navigation_cart_button {
+.navigation_cart_button{
     width: 10%;
     text-align: right;
 }
 
-.navigation_cart {
+.navigation_cart{
     color: #A26023;
     font-size: 30px;
+
 }
 
-.navigation_cart:hover {
+.navigation_cart:hover{
     color: white;
 }
 
-a.navigation_header_button:link,
-a.navigation_header_button:visited {
-    color: #B08054;
-    font-size: 20px;
-    padding: 14px 25px;
+a.navigation_header_button:link, a.navigation_header_button:visited {
+  color: #B08054;
+  font-size: 20px;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a.navigation_header_button:hover, a.navigation_header_button:active {
+    color: white;
+    
+}
+/* CSS ng side nav bar */
+.sidenav_admin {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #F1E9D6;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav_admin a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav_admin a:hover {
+  color: #f1f1f1;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.side_navigation_logo{
+    width: 100%;
+}
+
+/*CSS NG LOGIN*/
+.account_body{
+   /* background: url('../pictures/background_sign.jpg') no-repeat;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    margin-top: 3%;
+} 
+
+.account_container{
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    width: 65%;
+    height: 70%;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.account_form_box{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+
+.login_h2{
+    font-size: 2em;
+    text-align: center;
+}
+
+.login_form-group{
+    position: relative;
+    width: 100%;
+    height: 25px;
+    border-bottom: 2px solid #162938;
+    margin-top:30px;
+    
+}
+
+.login_form-btn{
+    margin-top: 30px;
+}
+
+
+
+
+.login_form-group input {
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+/*checkbox/*/
+.login_form-group input[type=checkbox]{
+    width: 1em;
+    font-size: inherit;
+    margin: 0;
+    transform: translateX(-9999px);
+}
+
+
+
+
+
+.login_form-group input[type=checkbox] + label:before{
+    position: absolute;
+    content: '';
+    left: -1.3em;
+    top: 0;
+    width: 1em;
+    height: 1em;
+    margin: 0;
+    border:none;
+    border-radius: 10%;
+    background-color: #bbbbbb;
+}
+.login_form-group input[type=checkbox] + label:after{
+    position: absolute;
+    content: '';
+    left: -1.3em;
+    top: 0;
+    width: 1em;
+    height: 1em;
+    margin: 0;
+    border: none;
+    background-color: white;
+    border-radius: 10%;
+    transform: scale(0.8);
+}
+
+
+
+.login_button_hidden{
+    background-color: white;
+    border: none;
+    color: #A26023;
+    border-radius: 10%;
+    padding: 3%;
+}
+
+.login_div{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    left: 0;
+    width: 50%;
+    z-index: 2;
+    padding: 30px 30px;
+}
+
+.account_container.active .login_div{
+    transform: translateX(0);
+}
+
+.account_btn{
+    
+    background-color: #A26023; 
+    border: none;
+    border-radius: 10%;
+    color: white;
+    padding: 3%;
     text-align: center;
     text-decoration: none;
     display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+      
 }
 
-a.navigation_header_button:hover,
-a.navigation_header_button:active {
+
+
+
+
+/* CSS NG SIGN UP*/
+.sign_up_form input{
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border: 1px solid gray;
+    border-radius: 6px;
+    outline: none;
+}
+
+
+
+.signup_div{
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+    padding: 30px 30px;
+}
+
+
+
+.signup_form_pages_divider form{
+    display: flex;
+    width: 310%;
+}
+.signup-pages .form-row{
+    margin:2% 0;
+}
+
+.signup_personal_page .form-row .col input,input::placeholder{
+    font-size: 11px;
+}
+
+
+.signup_form_pages_divider form .signup-pages{
+    margin-left: 4%;
+    margin-right: 3%;
+    width: 25%;
+    transition: margin-left 0.3s ease-in-out;
+}
+.signup_h4{
+    text-align: center;
+}
+
+.signup_dropdown {
+    font-size: 11px;
+    width:100%
+}
+
+.signup_nationality{
+    width:130px;
+}
+.signup_email_error{
+    padding-top: 30px;
+    font-size: .8em;
+    color: red;
+    display: none;
+}
+
+.signup_password_error{
+    font-size: .7em;
+    color: red;
+    display: none;
+}
+
+.signup2_password_error{
+    font-size: .7em;
+    color: red;
+    display: none;
+}
+
+
+
+.signup_form-btn{
+    margin-right: 10%;
+}
+
+.account_container.active .signup_div{
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: move 0.6s;
+}
+
+
+
+@keyframes move{
+    0%, 49.99%{
+        opacity: 0;
+        z-index: 1;
+    }
+    50%, 100%{
+        opacity: 0;
+        z-index: 5;
+    }
+}
+
+
+/**CSS NG PERSONAL DETAILS**/
+.personal_details_div{
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+    padding: 30px 30px;
+}
+
+/* CSS NG PROGRESS BAR SA SIGN UP */
+
+.signup_div .progress_div_progress-bar{
+    display: flex;
+    flex-direction: row;
+    margin: 40px 0;
+
+
+}
+
+.signup_div .progress_div_progress-bar .step{
+    position: relative;
+    text-align: center;
+    width: 100%;
+
+}
+
+.progress_div_progress-bar .step .bullet{
+    position: relative;
+    height: 25px;
+    width: 25px;
+    border: 2px solid #000;
+    display: inline-block;
+    border-radius: 50%;
+    
+}
+
+.progress_div_progress-bar .step:last-child .bullet:before,
+.progress_div_progress-bar .step:last-child .bullet:after{
+    display: none;
+}
+
+.progress_div_progress-bar .step .bullet:before,
+.progress_div_progress-bar .step .bullet:after{
+    position: absolute;
+    content: '';
+    bottom: 11px;
+    right: -108px;
+    height: 3px;
+    width: 100px;
+    background: #E29C57;
+}
+
+.progress_div_progress-bar .step .bullet:after {
+    background: #B08054;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: animate 0.3s linear forwards;
+}
+
+@keyframes animate{
+    100%{
+        transform: scaleX(1);
+    }
+}
+
+.progress_div_progress-bar .step .span{
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 25px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.progress_div_progress-bar .step .check{
+
+    position:absolute;
+    left: 50%;
+    top: 50%;
+    font-size: 15px;
+    transform: translate(-50%,-50%);
+    display: none;
+}
+
+
+/**CSS NG TGGLE CNTAINER SA LGIN AND SIGN UP*/
+.toggle_container{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height :100%;
+    overflow: hidden;
+    transition: all 0.6s ease-in-out;
+    border-radius: 120px 0 0 50px;
+    z-index: 1000;
+}
+
+.account_container.active .toggle_container{
+    transform: translateX(-100%);
+    border-radius: 0 120px  50px 0;
+}
+
+.toggle{
+    background-color: antiquewhite;
+    height: 100%;
+    position: relative;
+    color: black;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.account_container.active .toggle{
+    transform: translateX(50%);
+}
+
+.toggle-panel{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 30px;
+    text-align: center;
+    top: 0;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.toggle-left{
+    transform: translateX(-200%);
+}
+
+.account_container.active .toggle-left{
+    transform: translateX(0);
+}
+
+.toggle-right{
+    right: 0;
+    transform: translateX(0);
+}
+
+.account_container.active .toggle-right{
+    transform: translateX(200%);
+}
+
+/*CSS NG GET STARTED HOMESCREEN*/
+.homescreen_section_get_started {
+    display: flex; 
+    align-items: center; 
+    margin-top: 5%;
+    padding: 10%;
+    background-color: #FFFAED;
+    width: 100%;
+}
+
+.homescreen_content {
+    display: flex; 
+    width: 100%; 
+}
+
+.homescreen_text {
+    flex: 1; 
+    text-align: left; 
+    margin-right: 20px; 
+}
+
+.homescreen_image_div {
+    flex: 1; 
+    text-align: right; 
+}
+
+.homescreen_image {
+    width: 100%; 
+    max-width: 500px; 
+    height: auto; 
+}
+
+.homescreen_p {
+    font-size: 16px; 
+    line-height: 1.6; 
+    max-width: 80%;
+    margin: 4%;
+    color: #744916;
+}
+
+.homescreen_line {
+    width: 90%; 
+    background-color: #9D4F0A; 
+    border: none; 
+    height: 2px; 
+    margin: 10px; 
+}
+
+.home_screen_get_started_browse-btn {
+    background-color: #A9692B;
+    padding: 1% 3%;
     color: white;
+    border: none;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10%;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left:20px ;
+}
+
+.homescreen_get_started_title {
+    margin-left: 20px;
+    color:#9D4F0A;
+
 }
 
 /* CSS NG GET STARTED HOMESCREEN */
@@ -427,471 +957,337 @@ input[type="checkbox"]:checked + label {
     color: #B08054; 
 }
 
-
-/* CSS NG CART */
-body {
-    background-color: #FFFAED; 
+/*CSS NG Proof of payment*/
+.proof_payment {
+  background-color: #FFFAED;
+  margin-top: 175px;
+  font-family: Arial;
+  font-size: 17px;
+  padding: 8px;
 }
 
-.cart-container {
-    padding-top: 70px; 
-    align-items: center;
-    justify-content: center;
-    display: flex;
-}
-
-.cart-item {
-    display: flex;
-    align-items: center; 
-    justify-content: space-between; 
-    background-color: #FAF0D9; 
-    padding: 10px;
-    margin-top: 100px;
-    margin-bottom: 15px;
-    border-radius: 10px;
-    width: 85%;
-}
-
-.cart-item img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.cart-details {
-    flex-grow: 2;
-    margin-left: 15px;
-}
-
-.cart-details .cookie-title {
-    font-weight: bold;
-    font-size: 18px;
-    color: #000000;
-}
-
-.product-quantity, .order-quantity {
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-}
-
-.quantity-btn {
-    margin-left: 5px;
-    padding: 8px;
-    border: 1px solid #b08054;
-    background-color: transparent;
-    cursor: pointer;
-}
-
-.quantity-btn.selected {
-    background-color: #b08054;
-    color: #fff;
-}
-
-.cart_order-quantity-controls {
-    display: flex;
-    align-items: center;
-    margin-top: 5px;
-}
-
-.cart_order-quantity-controls button {
-    border: 1px solid #b08054; 
-    background-color: transparent; 
-    color: #5b372c; 
-    font-size: 16px;
-    padding: 5px 12px; 
-    cursor: pointer;
-    margin: 0 5px;
-    border-radius: 4px; 
-    transition: background-color 0.3s ease, color 0.3s ease; 
-}
-
-.cart_order-quantity-controls button:hover {
-    background-color: #b08054; 
-    color: white; 
-}
-
-.order-quantity-controls .quantity-increase, 
-.order-quantity-controls .quantity-decrease {
-    width: auto; 
-}
-
-.cart-price {
-    font-size: 18px;
-    font-weight: bold;
-    color: #000;
-}
-
-.cart_remove-item {
-    color: black;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-
-.cart-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    padding: 20px;
-}
-
-.cart_total-price {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 20px; 
-}
-
-.cart-buttons {
-    display: flex;
-    gap: 10px;
-}
-
-.cart-buttons button {
-    padding: 10px 15px;
-    background-color: #b08054;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.cart-buttons button.active {
-    background-color: #D1975F;
-}
-
-.cart-checkbox {
-    margin-right: 15px; 
-    width: 50px ;
-    height: 20px;
-    margin-top: 60px;
-}
-
-.voucher-popup {
-    display: none; 
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-}
-
-.voucher-popup-content {
-    background-color: #FAF0D9;
-    border-radius: 10px;
-    padding: 20px;
-    width: 300px;
-    margin: 100px auto;
-    text-align: center;
-    position: relative;
-}
-
-.voucher-popup-content h2 {
-    margin-bottom: 15px;
-}
-
-.voucher-input {
-    padding: 10px;
-    width: 80%;
-    border: 1px solid #B08054;
-    border-radius: 5px;
-}
-
-.apply-voucher-btn {
-    padding: 10px 20px;
-    background-color: #A9692B;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-.apply-voucher-btn:hover {
-    background-color: #8a5325;
-}
-
-.close-voucher-popup {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-CSS NG PRODUCT LIST ADMIN
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+/*CSS NG About us*/
+.About_Us {
+  background-color: #FFFAED;
+  margin-top: 175px;
+  font-family: Arial;
+  font-size: 17px;
+  padding: 8px;
+}
+/*CSS NG Customer Notif*/
+.C_notif {
+  background-color: #FFFAED;
+  margin-top: 175px;
+  font-family: Arial;
+  font-size: 17px;
+  padding: 8px;
+}
+/*CSS NG checkout*/
+.Checkout {
+  background-color: #FFFAED;
+  margin-top: 175px;
+  font-family: Arial;
+  font-size: 17px;
+  padding: 8px;
+}
+/*Universal CSS NG Checkout,proof of payment,about us and admin dashboard*/
+* {
+  box-sizing: border-box;
 }
 
-body {
-    display: flex;
+.row_Universal {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
 }
 
-/* Side Navigation */
-.sidenav_admin {
-    height: 100%;
-    width: 200px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #fff;
-    overflow-x: hidden;
-    padding-top: 20px;
+.col-25_Universal {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
 }
 
-.sidenav_admin a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
+.col-50_Universal {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
 }
 
-.sidenav_admin a:hover {
-    color: #f1f1f1;
+.col-75_Universal {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
 }
 
-.side_navigation_logo {
-    width: 100%;
+.col-25_Universal,
+.col-50_Universal,
+.col-75_Universal {
+  padding: 0 16px;
+}
+/*CSS NG  About us Container*/
+.container_About_Us {
+  background-color: #FFFAED;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid #FFFAED;
+  border-radius: 3px;
+}
+.container_Universal {
+  background-color: #FAF0D9;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
 }
 
-.logout {
-    display: block;
-    margin-top: 30px;
-    color: #8e6247;
-    font-size: 16px;
-    text-decoration: none;
-}
-
-.product_list_admin_main_background {
-    flex: 1;
-    padding: 20px;
-    background-color: #FAF0D9;
-    margin-left: 200px;
-}
-
-/* Search Product */
-.product_list_admin_search_header input[type="text"] {
-    width: 300px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 20px;
-}
-
-.product_list_admin_box {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.product_list_admin_filters {
-    display: flex;
-    align-items: center;
-    gap: 5%;
-    margin-bottom: 20px;
-}
-
-.product_list_admin_filters input {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    flex: 1;
-}
-
-.product_list_admin_filter_button {
-    padding: 10px 20px;
-    background-color: #9F520E;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.icons {
-    margin-left: auto;
-    display: flex;
-    gap: 10px;
-}
-
-.product_list_admin_add_button,
-.product_list_admin_delete_button {
-    background: none;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-.product_list_admin_add_button {
-    color: gray;
-}
-
-.product_list_admin_delete_button {
-    color: red;
-}
-
-.product_list_admin_add_button:hover {
-    color: #7d7d7d;
-}
-
-.product_list_admin_delete_button:hover {
-    color: darkred;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: white;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-th, td {
-    padding: 15px;
-    text-align: left;
-    border-bottom: 1px solid #f0f0f0;
-}
-
-th {
-    background-color: #F5F5F5;
-    color: #8e6247;
-}
-
-th input[type="checkbox"], td input[type="checkbox"] {
-    transform: scale(1.2);
-}
-
-/* CSS NG PRODUCT ID SA POP UP NG PRODUCT LIST ADMIN NA NAKA HIGHLIGHT */
-.product-id {
-    color: #B08054;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-/* CSS NG POP UP SA ADMIN PRODUCT LIST */
-#popup {
-    display: none;
-    position: fixed;
-    top: 10;
-    left: 10;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-}
-
-.popup-content {
-    background-color: #ffffff;
-    width: 70%;
-    max-width: 700px;
-    padding: 20px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
-}
-
-.back-button {
-    border: none;
-    background: none;
-    font-size: 16px;
-    cursor: pointer;
-    color: black;
-    font-weight: bold;
-    margin-bottom:  70%;
-}
-
-/* CSS NG VIEWING PRODUCT ID */
-.popup h2 {
-    color: black;
-}
-
-.popup-body {
-    display: flex;
-    gap: 20px;
-}
-
-.popup-image img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.popup-details {
-    flex: 1;
-}
-
-/* CSS NG PRODUCT VIEWING */
-.product-viewing {
-    margin-bottom: 15px; /* Space below the heading */
-}
-
-.product-viewing h2 {
-    color: #000; 
-    font-size: 1.5em; 
-    text-align: left; 
-    
-}
-
-.popup-field {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 10px 0;
+.pop_input input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
 }
 
 label {
-    font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
 }
 
-.edit-button {
-    background: none;
-    border: none;
-    color: #B08054;
-    cursor: pointer;
+.icon-container_Universal {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
 }
 
-.save-button {
-    background-color: #B08054;
-    color: white;
-    padding: 10px 20px;
-    border: none;
+.btn_univ {
+  background-color: #9F520E;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 50%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn_univ:hover {
+  background-color: #9F520E;
+}
+
+.btn_univ1 {
+  background-color: #D1975F;
+  color: white;
+  padding: 12px;
+  margin: 20px 0;
+  border: none;
+  width: 40%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn_univ1:hover {
+  background-color: #D1975F;
+}
+
+
+a {
+  color: #2196F3;
+}
+
+hr {
+  border: 1px solid lightgrey;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+
+
+@media (max-width: 800px) {
+  .row_Universal {
+    flex-direction: column-reverse;
+  }
+  .col-25_Universal {
+    margin-bottom: 20px;
+  }
+}
+/* mga modal image sa POP */
+#myImg {
     border-radius: 5px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
-/* CSS NG PRODUCT LIST POPUP QUANTITY */
-.popup-quantity table {
-    width: 100%;
+#myImg:hover {opacity: 0.7;}
+
+#myImg2 {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.popup-quantity th,
-.popup-quantity td {
+#myImg2:hover {opacity: 0.7;}
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 10000; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+    margin: auto;
+    display: none;
+    width: 80%;
+    max-width: 700px;
     text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {    
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+.Hyperlink_blk {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+Center_universal {text-align: center;}
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+/* CSS ng Feedback */
+.feedback-form {
+	max-width: 400px;
+	margin: 0 auto;
+}
+/* Css ng rating sa about Us */
+.rating_quality {
+	margin-bottom: 20px;
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: flex-end;
+}
+
+.rating_quality input {
+	display: none;
+}
+
+.rating_quality label {
+	font-size: 30px;
+	cursor: pointer;
+}
+
+.rating_quality label:hover,
+.rating_quality label:hover ~ label {
+	color: orange;
+}
+
+.rating_quality input:checked ~ label {
+	color: orange;
 }
 
 
 
 
 
+.comment {
+	margin-bottom: 20px;
+}
+
+.comment textarea {
+	width: 100%;
+	height: 100px;
+	resize: none;
+}
+
+.submit-btn {
+	background-color: #007bff;
+	color: #fff;
+	padding: 10px 20px;
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+/* CSS ng admin dashboard */
+.admindash_color {
+   background-color: #FAF0D9;
+
+}
+.main_admin {
+  margin-top: 25px;
+  margin-left: 200px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
 
 
-
-
-  
-
-
+table, th, td{
+  border:1px solid black;
+}
