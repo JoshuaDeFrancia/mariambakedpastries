@@ -447,14 +447,14 @@ signup_btn_next_2.addEventListener('click', (e) =>{
 
 
 
-    // SCRIPT NG POP UP SA BROWSE PRODUCT
-    function showPopup() {
-        document.getElementById('product-popup').style.display = 'block';
+     // SCRIPT NG POP UP SA BROWSE PRODUCT
+    function showBrowseProductPopup() {
+        document.getElementById('browse_product_popup').style.display = 'block';
         document.getElementById('backdrop').style.display = 'block'; 
     }
 
-    function closePopup() {
-        document.getElementById('product-popup').style.display = 'none';
+    function closeBrowseProductPopup() {
+        document.getElementById('browse_product_popup').style.display = 'none';
         document.getElementById('backdrop').style.display = 'none'; 
     }
 
@@ -501,7 +501,6 @@ signup_btn_next_2.addEventListener('click', (e) =>{
 
 
 // SCRIPT NG CART
-
 // SCRIPT SA CART SA PAG INCREASE NG ORDER QUANTITY 
 function increaseQuantity(event) {
     const orderQuantityElement = event.target.parentNode.querySelector('.order-quantity-value');
@@ -654,6 +653,7 @@ document.querySelectorAll('.cart_remove-item').forEach(button => {
 });
 
 updateTotalPrice(); 
+
 
 
 
