@@ -883,7 +883,7 @@ input[type="checkbox"]:checked + label {
 
 
 /* CSS NG CART */
-body {
+cart_body {
     background-color: #FFFAED; 
 }
 
