@@ -144,6 +144,14 @@ a.navigation_header_button:hover, a.navigation_header_button:active {
     width: 100%;
 }
 
+.logout {
+    display: block;
+    margin-top: 30px;
+    color: #8e6247;
+    font-size: 16px;
+    text-decoration: none;
+}
+
 /*CSS NG LOGIN*/
 .account_body{
    /* background: url('../pictures/background_sign.jpg') no-repeat;*/
@@ -532,116 +540,6 @@ a.navigation_header_button:hover, a.navigation_header_button:active {
 
 .account_container.active .toggle-right{
     transform: translateX(200%);
-}
-
-/* CSS NG NAVIGATION BAR */
-.navigation_nav-bar {
-    background-color: #F1E9D6;
-    width: 100%;
-    height: auto;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 99;
-}
-
-.navigation_logo {
-    width: 15%;
-}
-
-.navigation_innerdiv {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-
-    align-items: center;
-    justify-content: center;
-}
-
-.navigation_bottom {
-    text-align: center;
-    width: 100%;
-}
-
-.navigation_bottom_inside {
-    width: 100%;
-    padding: 1rem 1rem;
-    vertical-align: middle;
-}
-
-.navigation_bottom_left {
-    margin-left: 9%;
-    width: 90%;
-}
-
-.navigation_cart_button {
-    width: 10%;
-    text-align: right;
-}
-
-.navigation_cart {
-    color: #A26023;
-    font-size: 30px;
-}
-
-.navigation_cart:hover {
-    color: white;
-}
-
-a.navigation_header_button:link,
-a.navigation_header_button:visited {
-    color: #B08054;
-    font-size: 20px;
-    padding: 14px 25px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-}
-
-a.navigation_header_button:hover,
-a.navigation_header_button:active {
-    color: white;
-}
-
-/* CSS NG SIDE NAVIGATION  */
-.sidenav_admin {
-    height: 100%;
-    width: 200px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #fff;
-    overflow-x: hidden;
-    padding-top: 20px;
-} 
-
-.sidenav_admin a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-}
-
-.sidenav_admin a:hover {
-    color: #f1f1f1;
-}
-
-.side_navigation_logo {
-    width: 100%;
-}
-
-.logout {
-    display: block;
-    margin-top: 30px;
-    color: #8e6247;
-    font-size: 16px;
-    text-decoration: none;
 }
 
 /* CSS NG GET STARTED HOMESCREEN */
