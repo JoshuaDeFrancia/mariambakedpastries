@@ -145,11 +145,13 @@ a.navigation_header_button:hover, a.navigation_header_button:active {
 }
 
 .logout {
-    display: block;
-    margin-top: 30px;
-    color: #8e6247;
-    font-size: 16px;
-    text-decoration: none;
+     color: #B08054;
+  font-size: 20px;
+  padding: 20px 20px;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 200px;
+  margin-right: 70px;
 }
 
 /*CSS NG LOGIN*/
