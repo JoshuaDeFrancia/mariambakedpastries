@@ -655,6 +655,66 @@ document.querySelectorAll('.cart_remove-item').forEach(button => {
 updateTotalPrice(); 
 
 
+//POPOUT SA ORDER REQUEST DETAILS
+function showOrderRequestDetails(){
+    document.getElementById('OrderRequestPopUp').style.display = 'block';
+    document.getElementById('backdrop').style.display = 'block';
+    
+}
+
+function closeOrderRequestDetails(){
+    document.getElementById('OrderRequestPopUp').style.display = 'none';
+    document.getElementById('backdrop').style.display = 'none';
+    
+}
+
+function clickAllCheckbox(source){
+    const checkbox = document.querySelectorAll('.adminCheckbox');
+    checkbox.forEach(checkbox=>{
+        checkbox.checked = source.checked;
+    });
+
+}
+
+
+//pang lagay lang ng info sa customers
+
+function storeCustomerID(customerID) {
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", "?CustomerID=" + customerID, true);
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            const userData = JSON.parse(xhr.responseText);
+
+            displayCustomerDetails(userData);
+        }
+    };
+    xhr.send();
+}
+function displayCustomerDetails(userData) {
+
+    document.getElementById("UserDetailsID").textContent = userData.CustomerID;
+    document.getElementById("UserDetailsLastName").textContent = userData.LastName;
+    document.getElementById("UserDetailsMiddleName").textContent = userData.MiddleName;
+    document.getElementById("UserDetailsFirstName").textContent = userData.FirstName;
+    document.getElementById("UserDetailsContact").textContent = userData.ContactNum;
+    document.getElementById("UserDetailsEmail").textContent = userData.ContactNum;
+    document.getElementById("UserDetailsAddress1").textContent = userData.Address1;
+    document.getElementById("UserDetailsAddress2").textContent = userData.Address2;
+    document.getElementById("UserDetailsBarangay").textContent = userData.Barangay;
+    document.getElementById("UserDetailsCity").textContent = userData.City;
+    document.getElementById("UserDetailsProvince").textContent = userData.Province;
+    document.getElementById("UserDetailsCountry").textContent = userData.Country;
+    document.getElementById("UserDetailsZipCode").textContent = userData.ZipCode;
+    document.getElementById("UserDetailsBirthday").textContent = userData.Birthday;
+    document.getElementById("UserDetailsAge").textContent = userData.Age;
+    document.getElementById("UserDetailsGender").textContent = userData.Gender;
+    document.getElementById("UserDetailsStatus").textContent = userData.Status;
+    document.getElementById("UserDetailsReligion").textContent = userData.Religion;
+    document.getElementById("UserDetailsNationality").textContent = userData.Nationality;
+}
+
+
 
 
 
