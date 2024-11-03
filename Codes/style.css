@@ -1345,3 +1345,201 @@ Center_universal {text-align: center;}
 table, th, td{
   border:1px solid black;
 }
+
+
+
+/* Css ng order list */
+.OrderListContainer{
+    margin-left: 200px;
+    padding: 10px;
+}
+.OrderListSearch{
+    
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+
+    margin-bottom: 2%;
+}
+
+.OrderListSearch input[type="text"]{
+    width:20%;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    padding: 10px 15px;
+}
+
+.OrderListSearchButton{
+    padding: 10px 15px;
+    border: none;
+    background-color: #B08054;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+.OrderListBody{
+    width: 100%;
+    height: 70%;
+    background-color: #fff;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column; 
+    padding:30px
+}
+
+.FilterTab{
+    padding-bottom: 30px;
+}
+
+.OrderListLabel{
+    color: #8E8E8E;
+}
+
+.FilterTab input[type="date"]{
+    border-color: #E1E1E1;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    color: #bebebe;
+    padding: 2px;
+    width:15%;
+}
+
+.FilterTab input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1)
+            brightness(50%)
+
+            hue-rotate(180deg)
+}
+
+.OrderListTablediv{
+    width: 100%;
+}
+
+.orderlistFirstDetail{
+    margin: 20px;
+    margin-left: 20px;
+    width: 30%;
+    font-size: 10px;
+    
+}
+
+.orderlistFirstDetail table{
+    border-collapse: collapse; 
+
+}
+
+.orderlistSecondDetail{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.orderlistSecondDetailBox{
+    font-size: 10px;
+    height: 30%;
+    flex:1;
+    margin: 1%;
+    padding: 1%;
+    border-style: solid;
+    border-color: #E1E1E1;
+    border-width: .5px;
+    border-radius: 1%;
+
+}
+
+.orderlistSecondDetailBox table{
+    border-collapse: separate; /* Enables border-spacing */
+    border-spacing: 2px;
+
+}
+
+.orderlistThirdDetailBox {
+    font-size: 10px;
+    height: 30%;
+    flex:1;
+    margin: 1%;
+    padding: 1%;
+}
+
+.orderlistThirdDetailBox table {
+    padding: 5px;
+    border-style: solid;
+    border-color: #E1E1E1;
+    border-width: .5px;
+    border-radius: 1%;
+}
+
+.OrderRequestPopUp{
+    width: 80%;
+    height: 80%;
+    background-color: #fff;
+    border-radius: 5px;
+    display: none;
+    padding:30px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2000;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+
+/* CSS NG USERS */
+.UserListBody{
+    width: 100%;
+    height: 80%;
+    
+    z-index: 2000;
+    display: flex;
+    justify-content: space-between;
+}
+
+.UserListBodyBox1{
+    display: flex;
+    flex: 3;
+    padding: 2%;
+    background-color: #fff;
+    flex-direction: column;
+    border-radius: 5px;
+    height: 100vh;
+}
+.UserListBodyBox2{
+    flex: 1;
+    padding: 2%;
+    margin: 1%;
+    background-color: #fff;
+    border-radius: 5px;
+    height: 100%;
+}
+
+.UserListBan{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+
+}
+
+.UserListTable{
+    width: 100%;
+}
+
+.adminCheckbox{
+    color: blue;
+}
+
+.UserListDetailsUserID{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+
+.UserListDetailsBasic{
+    font-size: 16px;
+}
