@@ -716,7 +716,19 @@ function displayCustomerDetails(userData) {
 
 
 
-
+  
+// SCRIPT NG POP UP ADMIN SA PRODUCT LIST
+function showProductListPopup(productId) {
+    const popup = document.getElementById("product_list_popup");
+    const idElement = document.getElementById("product_list_popup-id");
+    idElement.innerText = productId;
+    popup.style.display = "flex";
+  }
+  
+  function closeProductListPopup() {
+    const popup = document.getElementById("product_list_popup");
+    popup.style.display = "none";
+  }
 
 
 
