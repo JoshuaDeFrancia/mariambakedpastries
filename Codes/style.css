@@ -1787,3 +1787,113 @@ th input[type="checkbox"], td input[type="checkbox"] {
 .product_list_admin_popup-quantity th {
     background: #f5f5f5;
 }
+
+
+/* ORDERTRACKING CSS */ 
+.orderTrackingBody{
+    margin: 2%;
+    padding: 3%;
+    background-color: #FAF0D9;
+    border-radius: 5px;
+}
+.orderTrackingTable{
+    width: 30%;
+}
+.orderTrackingThirdRow{
+    background-color: #FAF0D9;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.OrderTrackingProgress{
+    margin: 8em 6em 0 0;
+    
+}
+
+.OrderTrackingList{
+    list-style: none;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+    position: relative;
+    text-align: center;
+    margin: 0 auto; /* Center the list */
+
+}
+
+.OrderTrackingList li{
+    width: 5%;
+    position: relative;
+}
+
+.OrderTrackingList li::before{
+    
+    content: '\2713';
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 50px;
+    align-items: center;
+    font-size: 2rem;
+    height: 50px;
+    background-color: #B08054;
+    color: #fff;
+    border-radius: 50%;
+    z-index: 11111;
+}
+
+.OrderTrackingList li:last-child::before{
+    content: '\2713';
+    font-weight: bold;
+    background-color: #fff;
+    color: #000;
+}
+
+.OrderTrackingList::before{
+    content: '';
+    position: absolute;
+    top: 25px; 
+    left: 0; 
+    width: 75%; 
+    height: 10px; 
+    background: #B08054; 
+    margin-left: 5%;
+    z-index: 0; 
+}
+
+.OrderTrackingList::after{
+    content: '';
+    position: absolute;
+    top: 25px; 
+    width: 18%;
+    left: 0;  
+    height: 10px; 
+    margin-left: 5%;
+    background: #fff;
+
+}
+
+.OrderTrackingIconList{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+
+    margin-top: 8em;
+    gap: 10px;
+    margin-left:0;
+}
+.OrderTrackingIcon{
+    flex: 1;
+    text-align: center;
+
+
+}
+
+.OrderTrackingIcon img{
+    width: 50px;
+}
