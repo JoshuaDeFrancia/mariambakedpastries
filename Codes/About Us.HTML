@@ -3,20 +3,30 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+<body class="About_Us">
+    <nav class="navigation_nav-bar">
 <body class ="proof_payment">
  <nav class = "navigation_nav-bar">
         <div class="navigation_outerdiv">
+            <div class="navigation_innerdiv"><img src="..\Pictures\Navbar_Logo.png" class="navigation_logo"></div><!-- Lagayan ng photo-->
+            <div class="navigation_innerdiv navigation_bottom">
             <div class = "navigation_innerdiv"><img src = "..\Pictures\Navbar_Logo.png" class = "navigation_logo"></div><!-- Lagayan ng photo-->
             <div class = "navigation_innerdiv navigation_bottom">
                 <div class="navigation_bottom_inside navigation_bottom_left">
+                    <a href="/Menu.html" class="navigation_header_button">Browse Product</a>
+                    <a href="/Menu.html" class="navigation_header_button">Order Tracking</a>
+                    <a href="/Menu.html" class="navigation_header_button">Notification</a>
+                    <a href="/Menu.html" class="navigation_header_button">About Us</a>
                     <a href = "/Menu.html" class="navigation_header_button">Browse Product</a>
                     <a href = "/Menu.html" class="navigation_header_button">Order Tracking</a>
                     <a href = "/Menu.html" class="navigation_header_button">Notification</a>
                     <a href = "/Menu.html" class="navigation_header_button">About Us</a>
                 </div>
                 <div class="navigation_bottom_inside navigation_cart_button">
+                    <a href="#" class="navigation_cart">
+                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                    </a>
                     <a href="#" class = "navigation_cart">
                         <span class="glyphicon glyphicon-shopping-cart"></span> 
                       </a>
@@ -26,118 +36,64 @@
         </div>
     </nav>
 
-<p><a href="#">Order Request: 7002330 </a> </p>
-<div class="row_Universal">
-  <div class="col-75_Universal">
-    <div class="container_Universal">
-      <form action="/action_page.php">
-      
-        <div class="row_Universal">
-          <div class="col-50_Universal">
-            <h2>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i></span></h2>
-      <p><h4><a href="#">Product 1</a> <span style="color:black" class="price">₱150</span></h4> </p>
-  	<p>Subtotal <span class="price">₱150</span> </p>
-        <p>Discount <span class="price">5%</span> </p>
-        <p>Total <span class="price">₱114</span> </p>
+    <Center_universal><h2 style="color:#744916;">Business History</h2></Center_universal>
+    <div class="row_Universal">
+        <div class="col-75_Universal">
+            <div class="container_About_Us">
+                <form action="/action_page.php">
+                    <div class="row_Universal">
+                        <div class="col-50_Universal">
+                            <div class="row_Universal">
+                                <div class="col-50_Universal">
+                                    <img src="..\Pictures\IMG_7208.jpg" class="circle_logo">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-50_Universal">
+                            <br>
+                            </br>
+                            <br>
+                            </br>
+                            <h4 style="color:#744916;"><label>Early Days</h4></label>
+                            <h5 style="color:#744916;"> Mariam’s Baked Pastries, founded by Mariam D. El-Ali in 2019, is an online cookie shop which she established using the Instagram platform. They offer various cookies on their menu. The customer has an option to either pick up their orders from the shop or to request delivery service. The business relies on delivery applications such as Grab and Lalamove to deliver the orders to their customers.  The shop bakes their orders fresh daily. They deliver orders within the same day which limits the number of orders they can accept in a day.  They recently expanded their platform through opening their online shop using the following platforms such as Lazada and Shopee.</h5>
+                        </div>
+                    </div>
+                </form>
 
-</div>
-</div>
-</div>
-
-<br>
-</br>
-<p>
-</p>
-<div class="row_Universal">
-  <div class="col-75_Universal">
-    <div class="container_Universal">
-      <form action="/action_page.php">
-      
-        <div class="row_Universal">
-          <div class="col-50_Universal">
-
-  
-
-            <div class="row_Universal">
-              <div class="col-50_Universal">
-		 <h3>QR Payment</h3>
-		<h5>Gcash</h5>
-         <img id="myImg" src="..\Pictures\Gcash.jpg" alt="Gcash.jpg" style="width:100%;max-width:300px">
-
-<!-- The Modal -->
-<div id="myModal" class="modal">
-  <span class="close">&times;</span>
-  <img class="modal-content" id="img01">
-  <div id="caption"></div>
-</div>
-
-<script>
-// Get the modal
-var modal = document.getElementById('myModal');
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById('myImg');
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-img.onclick = function(){
-    modal.style.display = "block";
-    modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
-}
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("modal")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
-    modal.style.display = "none";
-}
-</script>
-
-                 <h5>BPI</h5>
-	   <img id="myImg2" src="..\Pictures\bpi.jpg" alt="bpi.jpg" style="width:100%;max-width:300px">
-
-<!-- The Modal -->
-<div id="myModal" class="modal">
-  <span class="close">&times;</span>
-  <img class="modal-content" id="img01">
-  <div id="caption"></div>
-</div>
-
-<script>
-// Get the modal
-var modal = document.getElementById('myModal');
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById('myImg2');
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-img.onclick = function(){
-    modal.style.display = "block";
-    modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
-}
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("modal")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
-    modal.style.display = "none";
-}
-</script>
-
-          
-              </div>
-            
-            </div>
-          </div>
-
-          <div class="col-50_Universal">
-
+    <Center_universal> <h2 style="color:#744916;"><label>Rate Us</h2></label></Center_universal>
+    <div class="row_Universal">
+        <div class="col-75_Universal">
+            <div class="container_Universal">
+                <div class="feedback-form">
+                    
+                    <form id="feedbackForm">
+                        <div class="rating_quality">
+                            <!-- Notice that the stars are in reverse order -->
+                            <input type="radio" id="star5" name="rating_quality" value="5">
+                            <label for="star5">&#9733;</label>
+                            <input type="radio" id="star4" name="rating_quality" value="4">
+                            <label for="star4">&#9733;</label>
+                            <input type="radio" id="star3" name="rating_quality" value="3">
+                            <label for="star3">&#9733;</label>
+                            <input type="radio" id="star2" name="rating_quality" value="2">
+                            <label for="star2">&#9733;</label>
+                            <input type="radio" id="star1" name="rating_quality" value="1">
+                            <label for="star1">&#9733;</label>
+                            <label> Product Quality: </label>
+                        </div>
+                      
+                        <div class="comment">
+                            <label for="comment">Tell us more:</label><br>
+                            <textarea id="comment" name="comment"></textarea>
+                        </div>
+			 <input type="file" name="Upload Photo" id="fileToUpload" class="fileup">
+                        <button type="submit" class="submit-btn_univ">Submit</button>
+                    </form>
+                </div>
               <h2><label for="tag">BPI Bank Deposit</h2></label>
               <p>
 
+                <script src="./script.js"></script>
               </p>
               <h2><label for="client">Account Name:</h2></label>
               <h3><label style="color:#9F520E" for="client">Mariam El ali</h3>
@@ -146,7 +102,18 @@ span.onclick = function() {
               <br>
               </br>
 
+            </div>
+        </div>
+    </div>
+ <div class="row_Universal">
+        <div class="col-75_Universal">
+            <div class="container_About_Us">
+                <Center_universal><h2 style="color:#744916;">Contact info</h2></Center_universal>
+                <br>Our Facebook Page: <a href="https://www.facebook.com/mariamsbakedpastries">https://www.facebook.com/mariamsbakedpastries</a></br>
+                <br>Our Instagram Page: <a href="https://www.instagram.com/mariamsbakedpastries">https://www.instagram.com/mariamsbakedpastries</a></br>
+		<br>Our Email: <a href="mariamsbakedpastries@gmail.com">mariamsbakedpastries@gmail.com</a></br>
 
+            </div>
               <h2><label for="client">Account Number:</h2></label>
               <h3><label style="color:#9F520E" for="client">3149283824</h3>
           </div>
@@ -170,11 +137,8 @@ span.onclick = function() {
       </br>
       <form action="upload.php" method="post" enctype="multipart/form-data">
           <input type="file" name="Upload Photo" id="fileToUpload" class="fileup"> <input type="submit" value="Confirm" class="btn_univ">
-
       </form>
   </div>
-
-
   </div>
   
 </div>
