@@ -1,3 +1,47 @@
+
+<?php
+    require 'database.php';
+
+
+    if (isset($_GET['ProductID'])) {
+      $productID = $_GET['ProductID'];
+      $sql = "SELECT pr.Price, pr.ProductID, pr.FlavorID,pr.Quantity, p.ProductImg, p.ProductName, p.ProductType, 
+      f.FlavorName, f.Description, f.Allergens
+      FROM price_tbl pr 
+      JOIN product_tbl p ON pr.ProductID = p.ProductID 
+      JOIN flavors_tbl f ON pr.FlavorID = f.FlavorID 
+      WHERE p.ProductID = '$productID'";
+  
+      $result = $mysqli->query($sql);
+  
+      if ($result) {
+          if ($result->num_rows > 0) {
+              $productData = [];
+              while ($row = $result->fetch_assoc()) {
+                  $productData[] = $row;  // Store all the rows in an array
+              }
+              echo json_encode($productData);
+          } else {
+              echo json_encode(["error" => "Product not found"]);
+          }
+      } else {
+          echo json_encode(["error" => "Query error: " . $mysqli->error]);
+      }
+      exit;
+  }
+  
+  
+  // The rest of your code for fetching all products can stay as is
+  $sql = "SELECT pr.Price, pr.ProductID, pr.FlavorID, p.ProductImg, p.ProductName, p.ProductType, 
+          f.FlavorName, f.Description, f.Allergens
+          FROM price_tbl pr 
+          JOIN product_tbl p ON pr.ProductID = p.ProductID 
+          JOIN flavors_tbl f ON pr.FlavorID = f.FlavorID 
+          GROUP BY ProductName";
+  
+  $all_products = $mysqli->query($sql);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,24 +51,24 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body class="product_list_body">
 
   <div class="sidenav_admin">
     <img src="..\Pictures\Navbar_Logo.png" class="side_navigation_logo">
-    <a href="/Menu.html" class="navigation_header_button"><i class="fas fa-tachometer-alt small_icon"></i> Dashboard</a>
-    <a href="/Menu.html" class="navigation_header_button"><i class="fas fa-shopping-cart small_icon"></i> Orders</a>
-    <a href="/Menu.html" class="navigation_header_button"><i class="fas fa-user small_icon"></i> Users</a>
-    <a href="/Menu.html" class="navigation_header_button"><i class="fas fa-cookie small_icon"></i> Products</a>
-    <a href="/Menu.html" class="navigation_header_button"><i class="fas fa-tags small_icon"></i> Vouchers</a>
-    <a href="/Menu.html" class="buttom_head_logout"><i class="fas fa-sign-out-alt small_icon"></i> Logout</a>
+    <a href="#" class="navigation_header_button" onclick="goDashboard()"> <i class="fas fa-tachometer-alt small_icon"></i> Dashboard</a>
+    <a href="#" class="navigation_header_button" onclick="goOrderList()"> <i class="fas fa-shopping-cart small_icon"></i> Orders</a>
+    <a href="#" class="navigation_header_button" onclick="goUsers()"> <i class="fas fa-user small_icon"></i> Users</a>
+    <a href="#" class="navigation_header_button" onclick="goProduct()"> <i class="fas fa-cookie small_icon"></i> Products</a>
+    <a href="#" class="navigation_header_button" onclick="goVoucher()"> <i class="fas fa-tags small_icon"></i> Vouchers</a>
+    <a href="#" class="buttom_head_logout" onclick="goLogout()"> <i class="fas fa-sign-out-alt small_icon"></i> Logout</a>
   </div>
-
 
   <main class="product_list_admin_main_background">
     <header class="product_list_admin_search_header">
       <input type="text" placeholder="Search product ID or Name">
     </header>
-    
+
     <section class="product-list">
       <div class="product_list_admin_box">
         <div class="product_list_admin_filters">
@@ -32,7 +76,7 @@
           <input type="text" placeholder="Flavor">
           <button class="product_list_admin_filter_button">Filter</button>
           <span class="product_list_icons">
-            <button class="product_list_admin_add_button">+</button>
+            <button class="open-button" onclick="openForm()">+</button>
             <button class="product_list_admin_delete_button">🗑️</button>
           </span>
         </div>
@@ -41,81 +85,71 @@
           <thead>
             <tr>
               <th><input type="checkbox"></th>
-              <th>ID</th>
+              <th>Product ID</th>
               <th>Product Name</th>
               <th>Product Type</th>
               <th>Flavor</th>
             </tr>
           </thead>
+
           <tbody>
-            <tr>
-              <td><input type="checkbox"></td>
-              <td><span class="product-id product_list_popup-id" onclick="showProductListPopup('PROD01')">PROD01</span></td>
-              <td>Classic Chocolate Chip Cookie Regular Sized Cookies</td>
-              <td>Regular Sized Cookies</td>
-              <td>Chocolate Chip</td>
-            </tr>
+            <?php while($row = mysqli_fetch_assoc($all_products)) { ?>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td><?php echo htmlspecialchars($row['ProductID']); ?></td>
+                <td><?php echo htmlspecialchars($row['ProductName']); ?></td>
+                <td><?php echo htmlspecialchars($row['ProductType']); ?></td>
+                <td><?php echo htmlspecialchars($row['FlavorName']); ?></td>
+              </tr>
+            <?php } ?>
           </tbody>
+          
         </table>
       </div>
     </section>
 
-    <div id="product_list_popup" class="product_list_popup">
-      <div class="popup-container">
-        <button class="back-button" onclick="closeProductListPopup()">Back</button>
-        
-        <div class="product_list_popup-content">
-          <div class="product_list_popup-body">
-            <div class="popup-image"></div>
-            
-            <div class="product_list_popup-details">
-              <h2>Viewing Product <span id="product_list_popup-id">PROD01</span></h2>
-              <div class="product_list_popup-field">
-                <label class="product_list-label">Product Name:</label>
-                <div class="product_list_text-box">
-                  <span>Classic Chocolate Cookie Regular Sized Cookies</span>
-                </div>
-                <button class="product_list-edit-button">✎</button>
-              </div>
-              <div class="product_list_popup-field">
-                <label class="product_list-label">Product Type:</label>
-                <div class="product_list_text-box">
-                  <span>Regular Sized Cookies</span>
-                </div>
-                <button class="product_list-edit-button">✎</button>
-              </div>
-              <div class="product_list_popup-field">
-                <label class="product_list-label">Flavor:</label>
-                <div class="product_list_text-box">
-                  <span>Chocolate Chip</span>
-                </div>
-                <button class="product_list-edit-button">✎</button>
-              </div>
     
-              <div class="product_list_admin_popup-quantity">
-                <table>
-                  <tr>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                  </tr>
-                  <tr>
-                    <td>6 <button class="product_list-edit-button">✎</button></td>
-                    <td>250.00 <button class="product_list-edit-button">✎</button></td>
-                  </tr>
-                  <tr>
-                    <td>12 <button class="product_list-edit-button">✎</button></td>
-                    <td>420.00 <button class="product_list-edit-button">✎</button></td>
-                  </tr>
-                </table>
-              </div>
-            </div>
-          </div>
-          <button class="product_list-save-button">Save</button>
-        </div>
-      </div>
-    </div>
-    
-    
+
+    <!-- Add New Item Form Popup -->
+    <div class="Add-item-popup" id="additem">
+  <form action="ADDITEM.php" method="POST" class="Add-item-container" enctype="multipart/form-data">
+    <h2>Add New Item</h2>
+    <label for="ProductImage"><b>Product Image</b></label>
+    <input type="file" name="ProductImage" id="fileToUpload" class="fileup" required>
+
+    <label for="ProductName"><b>Product Name</b></label>
+    <input type="text" placeholder="Enter Product Name" name="itemname" id="itemname" required>
+
+    <label for="Producttype"><b>Product Type</b></label>
+    <input type="text" placeholder="Enter Product Type" name="producttype" id="producttype" required>
+
+    <label for="Flavor"><b>Flavor</b></label>
+    <input type="text" placeholder="Enter Flavor" name="flavor" id="flavor" required>
+
+    <label for="Description"><b>Description</b></label>
+    <input type="text" placeholder="Enter Description" name="description" id="description" required>
+
+    <label for="Allergens"><b>Allergens</b></label>
+    <input type="text" placeholder="Enter Allergens" name="allergens" id="allergens" required>
+
+    <table>
+      <tr>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+      <tr>
+        <td><input type="text" placeholder="Quantity" name="Quantity" required></td>
+        <td><input type="text" placeholder="Price" name="Price" required></td>
+      </tr>
+    </table>
+
+    <button type="submit" class="btn_additem">Submit</button>
+    <button type="button" class="btn_additem cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+  </main>
+
   <script src="script.js"></script>
 </body>
 </html>
