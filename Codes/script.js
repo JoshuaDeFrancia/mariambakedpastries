@@ -575,6 +575,13 @@ function showProductListPopup(productId) {
   }
 
 
+function openForm() {
+  document.getElementById("additem").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("additem").style.display = "none";
+}
 
 
 
