@@ -1913,7 +1913,7 @@ th input[type="checkbox"], td input[type="checkbox"] {
     background: #f1f1f1;
   }
   
- /
+ 
   .Add-item-container input[type=text]:focus {
     background-color: #ddd;
     outline: none;
@@ -1931,7 +1931,7 @@ th input[type="checkbox"], td input[type="checkbox"] {
     opacity: 0.8;
   }
   
-  /
+  
   .Add-item-container .cancel {
     background-color: red;
   }
